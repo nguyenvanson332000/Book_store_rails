@@ -1,0 +1,58 @@
+<div id="content">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="#"><i class="zmdi zmdi-notifications text-danger"></i>
+          </a>
+        </li>
+        <li><%= link_to_unless_current "English", locale:"en" %></li>
+        <li><%= link_to_unless_current "Vietnamese", locale:"vi" %></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <%= link_to t("crud.create"), create_path,class:"nav-link" %>
+      <h2><%= t"left_menu.products" %></h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th><%= t"product.name" %></th>
+            <th><%= t"product.quantity" %></th>
+            <th><%= t"product.price" %></th>
+            <th><%= t"product.author" %></th>
+            <th><%= t"crud.edit" %></th>
+            <th><%= t"crud.delete" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Harry Potter</td>
+            <td>5</td>
+            <td>2.000.000 d</td>
+            <td>Alan Walker</td>
+            <td><button class="btn btn-primary"><%= t"crud.edit" %></button></td>
+            <td><button class="btn btn-danger"><%= t"crud.delete" %></button></td>
+          </tr>
+          <tr>
+            <td>Harry Potter</td>
+            <td>5</td>
+            <td>2.000.000 d</td>
+            <td>Alan Walker</td>
+            <td><button class="btn btn-primary"><%= t"crud.edit" %></button></td>
+            <td><button class="btn btn-danger"><%= t"crud.delete" %></button></td>
+          </tr>
+          <tr>
+            <td>Harry Potter</td>
+            <td>5</td>
+            <td>2.000.000 d</td>
+            <td>Alan Walker</td>
+            <td><button class="btn btn-primary"><%= t"crud.edit" %></button></td>
+            <td><button class="btn btn-danger"><%= t"crud.delete" %></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
