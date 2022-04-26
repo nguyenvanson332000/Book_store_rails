@@ -32,3 +32,27 @@ vi:
     book: "Book"
     store: "store"
     home: "Trang chủ"
+  title:
+    sign_up: "Đăng ký"
+    login: "Đăng nhập"
+  users:
+    form:
+      name: "Tên"
+      email: "Gmail"
+      id_card: "Số CMND"
+      phone_number: "Số điện thoại"
+      address: "Địa chỉ"
+      password: "Mật khẩu"
+      password_confirmation: "Nhập lại mật khẩu"
+    new:
+      new_user: "Người dùng mới? "
+      profile: "Hồ sơ"
+      settings: "Cài đặt"
+      logout: "Đăng xuất"
+      order: "Giỏ hàng"
+      remember: "Hãy ghi nhớ tôi"
+      btn_create: "Tạo Tài Khỏan Mới"
+  flash:
+    create_account_success: "Tạo tài khoản thành công"
+    create_account_fail: "Tạo tài khoản thất bại"
+    email_password_combination: "Email/mật khẩu không hợp lệ"

@@ -1,0 +1,26 @@
+<% provide :title, t("title.login") %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1 class="center"><%= t"title.login" %></h1>
+      </div>
+      <div class="panel-body">
+        <%= form_for :session, url: login_path do |f| %>
+          <%= f.label t "users.form.email" %>
+          <%= f.email_field :email, class: "form-control" %>
+          <%= f.label t"users.form.password" %>
+          <%= f.password_field :password, class: "form-control" %>
+          <%= f.label :remember_me, class: "checkbox inline" do %>
+            <%= f.check_box :remember_me %>
+            <span><%= t "users.new.remember" %></span>
+          <% end %>
+          <%= f.submit t("title.login"), class: "btn btn-success button_custom" %>
+        <% end %>
+        <p class="p-register">
+          <%= t "users.new.new_user" %> <%= link_to t("header.sign_up"), signup_path %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
