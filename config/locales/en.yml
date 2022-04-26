@@ -32,3 +32,27 @@ en:
     book: "Book"
     store: "store"
     home: "Home"
+  title:
+    sign_up: "Sign up"
+    login: "Login"
+  users:
+    form:
+      name: "Name"
+      email: "Gmail"
+      id_card: "ID Card"
+      phone_number: "Phone number"
+      address: "Address"
+      password: "Password"
+      password_confirmation: "Confirmation"
+    new:
+      new_user: "New User? "
+      profile: "Profile"
+      settings: "Settings"
+      logout: "Logout"
+      order: "Cart"
+      remember: "Remember me"
+      btn_create: "Create my account"
+  flash:
+    create_account_success: "Create Account successfully "
+    create_account_fail: "Create Account Fail"
+    email_password_combination: "Invalid email/password combination"

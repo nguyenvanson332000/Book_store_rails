@@ -1,3 +1,7 @@
+VALID_EMAIL_REGEX: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+PHONE_NUMBER_REGEX: !ruby/regexp /(84|0[3|5|7|8|9])+([0-9]{8})\b/i
+ID_CARD_REGEX: !ruby/regexp /([0-9]{9})||([0-9]{8})\b/i
+
 validate:
   length:
     digist_255: 255

@@ -14,6 +14,14 @@ gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap-sass", "3.4.1"
 gem "rails-i18n"
 gem "config"
+gem "bcrypt"
+gem "paranoia", "~> 2.2"
+gem "simplecov"
+gem "simplecov-rcov"
+gem "mini_magick", "4.9.5"
+gem "image_processing", "1.9.3"
+gem "kaminari"
+gem "bootstrap-kaminari-views"
 
 group :development, :test do
   gem "rspec-rails", "~> 4.0.1"
