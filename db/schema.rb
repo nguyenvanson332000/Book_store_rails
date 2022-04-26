@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_25_155933) do
+ActiveRecord::Schema.define(version: 2022_04_28_072508) do
 
   create_table "categories", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.integer "parent_id"
@@ -90,6 +90,10 @@ ActiveRecord::Schema.define(version: 2022_04_25_155933) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "remember_digest"
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
+    t.boolean "admin"
   end
 
   add_foreign_key "order_details", "orders"

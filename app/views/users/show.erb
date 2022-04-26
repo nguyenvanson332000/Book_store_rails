@@ -1,0 +1,17 @@
+<% provide :title, @user.name %>
+<div class="row">
+  <aside class="col-md-6">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+      <ul class = "show-info">
+        <li><%= "#{t("users.form.email")}:  #{@user.email}" %></li>
+        <li><%= "#{t("users.form.id_card")}:  #{@user.id_card}" %></li>
+        <li><%= "#{t("users.form.phone_number")}:  #{@user.phone_number}" %></li>
+        <li><%= "#{t("users.form.address")}:  #{@user.address}" %></li>
+      </ul>
+    </section>
+  </aside>
+</div>
