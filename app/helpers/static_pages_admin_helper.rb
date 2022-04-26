@@ -1,0 +1,2 @@
+module StaticPagesAdminHelper
+end

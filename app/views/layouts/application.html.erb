@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WesternWine</title>
+    <title><%= yield(:title) %> | EMC_BOOK</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
   </head>
-
-  <body>
-    <%= yield %>
+  <body id="top">
+    <%#<%= render "shared/leftMenuAdmin" %>
+    <%= render "layouts/header_client" %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

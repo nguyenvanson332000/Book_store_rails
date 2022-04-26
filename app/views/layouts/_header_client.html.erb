@@ -1,0 +1,78 @@
+<div class="wrapper row0">
+  <div id="topbar" class="hoc clear">
+    <div class="fl_left">
+      <ul class="nospace">
+        <li><%= link_to "", home_path, class: "fas fa-home fa-lg"%></li>
+        <li><%= link_to t("language.en"), root_path(locale: :en) %></li>
+        <li><%= link_to t("language.vi"), root_path(locale: :vi) %></li>
+        <li><%= link_to t("header.login"), "#" %></li>
+        <li><%= link_to t("header.sign_up"), "#" %></li>
+      </ul>
+    </div>
+    <div class="fl_right">
+      <ul class="nospace">
+        <li><i class="fas fa-phone rgtspace-5"></i><%= t "header.phone_contact" %> </li>
+        <li><i class="fas fa-envelope rgtspace-5"></i> <%= t "header.email_contact" %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="wrapper row1">
+  <header id="header" class="hoc clear">
+    <div id="logo" class="one_half first">
+      <h1 class="logoname"><a href="index.html">
+          <span><%= t "header.book" %></span>
+          <%= t "header.store" %></a>
+      </h1>
+    </div>
+    <div class="one_half">
+      <ul class="nospace clear">
+        <li class="one_half first">
+          <div class="block clear"><i class="fas fa-phone"></i> <span><strong class="block">
+                <%= t "header.call_us" %></strong>
+              <%= t "header.phone_contact" %></span>
+          </div>
+        </li>
+        <li class="one_half">
+          <div class="block clear"><i class="far fa-clock"></i> <span><strong class="block">
+                <%= t "header.time_work" %></strong>
+              <%= t "header.time_h" %></span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <nav id="mainav" class="hoc clear">
+    <ul class="clear">
+      <li class="active"><a href="index.html">Home</a></li>
+      <li><a class="drop" href="#">Pages</a>
+        <ul>
+          <li><a href="pages/gallery.html">Gallery</a></li>
+          <li><a href="pages/full-width.html">Full Width</a></li>
+          <li><a href="pages/sidebar-left.html">Sidebar Left</a></li>
+          <li><a href="pages/sidebar-right.html">Sidebar Right</a></li>
+          <li><a href="pages/basic-grid.html">Basic Grid</a></li>
+          <li><a href="pages/font-icons.html">Font Icons</a></li>
+        </ul>
+      </li>
+      <li><a class="drop" href="#">Dropdown</a>
+        <ul>
+          <li><a href="#">Level 2</a></li>
+          <li><a class="drop" href="#">Level 2 + Drop</a>
+            <ul>
+              <li><a href="#">Level 3</a></li>
+              <li><a href="#">Level 3</a></li>
+              <li><a href="#">Level 3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Level 2</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Link Text</a></li>
+      <li><a href="#">Link Text</a></li>
+      <li><a href="#">Link Text</a></li>
+      <li><a href="#">Long Link Text</a></li>
+    </ul>
+  </nav>
+</div>
+<%= javascript_pack_tag "custom" %>

@@ -74,3 +74,14 @@ yarn-debug.log*
 config/credentials.yml.enc
 config/database.yml
 /spec/*
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
