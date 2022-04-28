@@ -9,3 +9,4 @@ validate:
     digist_6: 6
 size:
   size_avatar: 120
+paginate_size: 5

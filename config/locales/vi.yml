@@ -95,3 +95,24 @@ vi:
     note_reset: "Liên kết này sẽ hết hạn sau hai giờ.
           Nếu bạn không yêu cầu đặt lại mật khẩu của mình,
           vui lòng bỏ qua email này và mật khẩu của bạn sẽ vẫn như cũ."
+  views:
+    pagination:
+      first: "« Đầu tiên"
+      last: "Cuối cùng »"
+      previous: "‹ Trước"
+      next: "Tiếp theo ›"
+  home:
+    price: "Giá bán: "
+    add_to_cart: "Thêm vào giỏ"
+    see_details: "Xem chi tiết"
+    category: "Thể loại"
+    author: "Tác giả"
+    publisher: "Nhà xuất bản"
+  number:
+    currency:
+      format:
+        format: "%n %u"
+        unit: "đ"
+        separator: "."
+        delimiter: ","
+        precision: "."

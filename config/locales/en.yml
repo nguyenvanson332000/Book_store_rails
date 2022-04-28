@@ -95,3 +95,24 @@ en:
     note_reset: "This link will expire in two hours.
           If you did not request your password to be reset, please ignore this
           email and your password will stay as it is."
+  views:
+    pagination:
+      first: "« First"
+      last: "Last »"
+      previous: "‹ Prev"
+      next: "Next ›"
+  home:
+    price: "Price: "
+    add_to_cart: "Add To Cart"
+    see_details: "See Details"
+    category: "Category"
+    author: "Author"
+    publisher: "Publisher"
+  number:
+    currency:
+      format:
+        format: "%n %u"
+        unit: "VNĐ"
+        delimiter: ","
+        separator: "."
+        precision: "."

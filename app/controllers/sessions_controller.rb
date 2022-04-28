@@ -26,10 +26,18 @@ class SessionsController < ApplicationController
   def check_activated(user)
     if user.activated
       log_in user
-      redirect_back_or user
+      check_admin user
     else
       flash[:warning] = t "flash.check_activated"
       edirect_to root_url
+    end
+  end
+
+  def check_admin user
+    if user.admin?
+      redirect_back_or home_path
+    else
+      redirect_back_or root_url
     end
   end
 end

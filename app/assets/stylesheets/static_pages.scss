@@ -1,16 +1,8 @@
 @charset "utf-8";
-/*
-Template Name: Surogou
-Author: <a href="https://www.os-templates.com/">OS Templates</a>
-Author URI: https://www.os-templates.com/
-Copyright: OS-Templates.com
-Licence: Free to use under our free template licence terms
-Licence URI: https://www.os-templates.com/template-terms
-File: Layout CSS
-*/
 
 @import url("fontawesome-free/css/fontawesome-all.min.css");
 @import url("framework.css");
+@import "color";
 
 /* Rows
 --------------------------------------------------------------------------------------------------------------- */
@@ -481,8 +473,6 @@ File: Layout CSS
   cursor: pointer;
 }
 
-/* Copyright
---------------------------------------------------------------------------------------------------------------- */
 #copyright {
   padding: 20px 0;
 }
@@ -491,11 +481,6 @@ File: Layout CSS
   padding: 0;
 }
 
-/* Transition Fade
-This gives a smooth transition to "ALL" elements used in the layout - other than the navigation form used in mobile devices
-If you don't want it to fade all elements, you have to list the ones you want to be faded individually
-Delete it completely to stop fading
---------------------------------------------------------------------------------------------------------------- */
 *,
 *::before,
 *::after {
@@ -504,12 +489,6 @@ Delete it completely to stop fading
 #mainav form * {
   transition: none !important;
 }
-
-/* ------------------------------------------------------------------------------------------------------------ */
-/* ------------------------------------------------------------------------------------------------------------ */
-/* ------------------------------------------------------------------------------------------------------------ */
-/* ------------------------------------------------------------------------------------------------------------ */
-/* ------------------------------------------------------------------------------------------------------------ */
 
 /* Navigation
 --------------------------------------------------------------------------------------------------------------- */
@@ -862,7 +841,7 @@ body {
   background-color: #ffffff;
 }
 a {
-  color: #f63;
+  color: #f7a804;
 }
 a:active,
 a:focus {
@@ -900,8 +879,8 @@ textarea:focus,
 .btn,
 .btn.inverse:hover {
   color: #ffffff;
-  background-color: #f63;
-  border-color: #f63;
+  background-color: #f7a804;
+  border-color: #f7a804;
 }
 .btn:hover,
 .btn.inverse {
@@ -911,7 +890,7 @@ textarea:focus,
 }
 
 .logoname {
-  color: #f63;
+  color: #f7a804;
 }
 .logoname span {
   color: #0e74a5;
@@ -958,7 +937,7 @@ textarea:focus,
   border-color: rgba(255, 255, 255, 0.4);
 }
 #topbar div:first-of-type li:first-child a {
-  color: #f63;
+  color: #f7a804;
 }
 
 /* Header */
@@ -981,7 +960,7 @@ textarea:focus,
 }
 .ringcon:hover {
   color: #ffffff;
-  background-color: #f63;
+  background-color: #f7a804;
 }
 
 .overview > li figure a::after {
@@ -1044,17 +1023,17 @@ textarea:focus,
   background-color: #0e74a5;
 }
 #footer input:focus {
-  border-color: #f63;
+  border-color: #f7a804;
 }
 #footer button {
   color: #ffffff;
-  background-color: #f63;
+  background-color: #f7a804;
 }
 
 /* Navigation */
 #mainav {
   color: #ffffff;
-  background-color: #f63;
+  background-color: #f7a804;
 }
 #mainav li a {
   color: inherit;
@@ -1068,13 +1047,13 @@ textarea:focus,
 #mainav li li a,
 #mainav .active li a {
   color: #ffffff;
-  background-color: rgba(247, 168, 4, 0.5); /* #f63 */
+  background-color: rgba(247, 168, 4, 0.5); /* #F7A804 */
   border-color: rgba(0, 0, 0, 0.6);
 }
 #mainav li li:hover > a,
 #mainav .active .active > a {
   color: #0e74a5;
-  background-color: #f63;
+  background-color: #f7a804;
 }
 #mainav form select {
   color: #474747;
@@ -1086,7 +1065,7 @@ textarea:focus,
   background-color: inherit;
 }
 #breadcrumb li:last-child a {
-  color: #f63;
+  color: #f7a804;
 }
 
 .container .sidebar nav a {
@@ -1094,7 +1073,7 @@ textarea:focus,
   border-color: #d7d7d7;
 }
 .container .sidebar nav a:hover {
-  color: #f63;
+  color: #f7a804;
 }
 
 .pagination a,
@@ -1103,12 +1082,12 @@ textarea:focus,
 }
 .pagination .current * {
   color: #ffffff;
-  background-color: #f63;
+  background-color: #f7a804;
 }
 
 #backtotop {
   color: #ffffff;
-  background-color: #f63;
+  background-color: #f7a804;
 }
 
 /* Tables + Comments */
@@ -1123,7 +1102,7 @@ td,
 #comments input:focus,
 #comments textarea:focus,
 #comments *:required:focus {
-  border-color: #f63;
+  border-color: #f7a804;
 }
 th {
   color: #ffffff;
@@ -1145,12 +1124,6 @@ table a,
 #comments a {
   background-color: inherit;
 }
-
-/* ------------------------------------------------------------------------------------------------------------ */
-/* ------------------------------------------------------------------------------------------------------------ */
-/* ------------------------------------------------------------------------------------------------------------ */
-/* ------------------------------------------------------------------------------------------------------------ */
-/* ------------------------------------------------------------------------------------------------------------ */
 
 /* Media Queries
 --------------------------------------------------------------------------------------------------------------- */
@@ -1322,4 +1295,60 @@ table a,
   .font-x3 {
     font-size: 1.6rem;
   }
+}
+
+.product-box h3 > a,
+.product-box h3 > a:hover,
+.product-box h3 > a:focus .product-box a {
+  color: $black;
+  text-decoration: none;
+}
+.text-center {
+  text-align: center;
+}
+.btn-product {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 15px;
+}
+a:link.btn-product {
+  text-decoration: none;
+}
+.alg-right-pad {
+  float: right;
+  padding-right: 20px;
+  margin-bottom: 5px;
+}
+.product-title {
+  text-decoration: none;
+  text-align: center;
+  font: 13px Arial, Helvetica, sans-serif, sans-serif;
+  font-weight: bold;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+a:link.product-title {
+  text-decoration: none;
+}
+.price-st {
+  font-size: 15px;
+  font-weight: bold;
+  color: $red;
 }
