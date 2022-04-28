@@ -11,8 +11,11 @@
     <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
   </head>
   <body id="top">
-    <%# <%= render "shared/leftMenuAdmin" %>
-    <%= render "layouts/header_client" %>
+    <% if logged_in? %>
+      <%= render "shared/#{current_user.admin? ? "leftMenuAdmin" : "header_client"}" %>
+    <% else %>
+      <%= render "shared/header_client" %>
+    <% end %>
     <div class="container">
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>

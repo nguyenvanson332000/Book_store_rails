@@ -1,0 +1,19 @@
+<% @products.each do |products| %>
+  <div class="col-md-4 text-center col-sm-6 col-xs-6">
+    <div class="thumbnail product-box">
+      <%= image_tag("doraemon_tap19.jpg", alt: "rss feed") %>
+      <div class="caption">
+        <%= link_to products.name, "#", class: "product-title" %>
+        <p>
+          <%= t "home.price" %>
+          <strong class="price-st"><%= t(number_to_currency(products.price)) %></strong>
+        </p>
+        <p>
+          <%= link_to t("home.add_to_cart"), "#", class: "btn-product btn-success" %>
+          <%= link_to t("home.see_details"), "#", class: "btn-product btn-primary" %>
+        </p>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= paginate @products, theme: "twitter-bootstrap-3" %>
