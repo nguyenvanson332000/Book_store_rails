@@ -35,6 +35,7 @@ vi:
   title:
     sign_up: "Đăng ký"
     login: "Đăng nhập"
+    edit_user: "Cập Nhật Người Dùng"
   users:
     form:
       name: "Tên"
@@ -52,7 +53,23 @@ vi:
       order: "Giỏ hàng"
       remember: "Hãy ghi nhớ tôi"
       btn_create: "Tạo Tài Khỏan Mới"
+    edit:
+      h1_html: "Cập nhật hồ sơ cá nhân"
+      btn_save: "Cập Nhật Tài Khoản"
   flash:
     create_account_success: "Tạo tài khoản thành công"
     create_account_fail: "Tạo tài khoản thất bại"
     email_password_combination: "Email/mật khẩu không hợp lệ"
+    update_profile_success: "Cập nhật profile thành công"
+    update_profile_fail: "Cập nhật profile thất bại"
+    user_not_found: "Không tìm thấy người dùng"
+    please_login: "Vui lòng đăng nhập"
+    check_activated: "Vui lòng kiểm tra email, kích hoạt tài khoản"
+    please_check_email: "Vui lòng kiểm tra email của bạn để kích hoạt tài khoản của bạn."
+    account_activated: "Tài khoản đã được kích hoạt!"
+    invalid_activation_link: "Liên kết kích hoạt không hợp lệ"
+    account_activation: "Kích hoạt tài khoản"
+  mailer:
+    book_store: "Book Store"
+    hi: "Xin Chào"
+    content_mail: "Chào mừng đến với Book store! Nhấp vào liên kết bên dưới để kích hoạt tài khoản của bạn:"

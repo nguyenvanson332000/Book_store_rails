@@ -35,6 +35,7 @@ en:
   title:
     sign_up: "Sign up"
     login: "Login"
+    edit_user: "Edit user"
   users:
     form:
       name: "Name"
@@ -52,7 +53,23 @@ en:
       order: "Cart"
       remember: "Remember me"
       btn_create: "Create my account"
+    edit:
+      h1_html: "Update your profile"
+      btn_save: "Update my account"
   flash:
     create_account_success: "Create Account successfully "
     create_account_fail: "Create Account Fail"
     email_password_combination: "Invalid email/password combination"
+    update_profile_success: "Profile update success"
+    update_profile_fail: "Profile update fail"
+    user_not_found: "User not found"
+    please_login: "Please login"
+    check_activated: "Please check email , activated account"
+    please_check_email: "Please check your email to activate your account."
+    account_activated: "Account activated!"
+    invalid_activation_link: "Invalid activation link"
+    account_activation: "Account activation"
+  mailer:
+    book_store: "Book Store"
+    hi: "Hello"
+    content_mail: "Welcome to the Book store! Click on the link below to activate your account:"
