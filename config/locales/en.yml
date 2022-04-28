@@ -36,6 +36,8 @@ en:
     sign_up: "Sign up"
     login: "Login"
     edit_user: "Edit user"
+    forgot_pass: "Forgot password"
+    reset_pass: "Reset password"
   users:
     form:
       name: "Name"
@@ -53,9 +55,18 @@ en:
       order: "Cart"
       remember: "Remember me"
       btn_create: "Create my account"
+      forgot_password: "Forgot Password ?"
     edit:
       h1_html: "Update your profile"
       btn_save: "Update my account"
+  password_resets:
+    edit:
+      password: "Password"
+      password_confirmation: "Confirmation"
+      btn_submit: "Confirm"
+    new:
+      email: "Gmail"
+      btn_submit: "Send"
   flash:
     create_account_success: "Create Account successfully "
     create_account_fail: "Create Account Fail"
@@ -69,7 +80,18 @@ en:
     account_activated: "Account activated!"
     invalid_activation_link: "Invalid activation link"
     account_activation: "Account activation"
+    email_sent: "Email sent with password reset instructions"
+    email_not_found: "Email address not found"
+    pass_reset: "Password reset"
+    pass_reset_has_expired: "Password reset has expired."
+    pass_has_been_reset: "Password has been reset."
+    cant_be_empty: "can't be empty"
   mailer:
     book_store: "Book Store"
     hi: "Hello"
     content_mail: "Welcome to the Book store! Click on the link below to activate your account:"
+    pass_reset: "Password reset"
+    content_reset: "To reset your password click the link below:"
+    note_reset: "This link will expire in two hours.
+          If you did not request your password to be reset, please ignore this
+          email and your password will stay as it is."

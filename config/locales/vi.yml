@@ -36,6 +36,8 @@ vi:
     sign_up: "Đăng ký"
     login: "Đăng nhập"
     edit_user: "Cập Nhật Người Dùng"
+    forgot_pass: "Quên mật khẩu"
+    reset_pass: "Đặt lại mật khẩu"
   users:
     form:
       name: "Tên"
@@ -53,9 +55,18 @@ vi:
       order: "Giỏ hàng"
       remember: "Hãy ghi nhớ tôi"
       btn_create: "Tạo Tài Khỏan Mới"
+      forgot_password: "Quên Mật Khẩu ?"
     edit:
       h1_html: "Cập nhật hồ sơ cá nhân"
       btn_save: "Cập Nhật Tài Khoản"
+  password_resets:
+    edit:
+      password: "Mật Khẩu"
+      password_confirmation: "Xác Nhận"
+      btn_submit: "Xác Nhận"
+    new:
+      email: "Gmail"
+      btn_submit: "Gửi"
   flash:
     create_account_success: "Tạo tài khoản thành công"
     create_account_fail: "Tạo tài khoản thất bại"
@@ -69,7 +80,18 @@ vi:
     account_activated: "Tài khoản đã được kích hoạt!"
     invalid_activation_link: "Liên kết kích hoạt không hợp lệ"
     account_activation: "Kích hoạt tài khoản"
+    email_sent: "Email được gửi kèm theo hướng dẫn đặt lại mật khẩu"
+    email_not_found: "Không tìm thấy địa chỉ email"
+    pass_reset: "Đặt lại mật khẩu"
+    pass_reset_has_expired: "Đặt lại mật khẩu đã hết hạn."
+    pass_has_been_reset: "Mật khẩu đã được đặt lại."
+    cant_be_empty: "không thể để trống"
   mailer:
     book_store: "Book Store"
     hi: "Xin Chào"
     content_mail: "Chào mừng đến với Book store! Nhấp vào liên kết bên dưới để kích hoạt tài khoản của bạn:"
+    pass_reset: "Đặt lại mật khẩu"
+    content_reset: "Để đặt lại mật khẩu của bạn, hãy nhấp vào liên kết bên dưới:"
+    note_reset: "Liên kết này sẽ hết hạn sau hai giờ.
+          Nếu bạn không yêu cầu đặt lại mật khẩu của mình,
+          vui lòng bỏ qua email này và mật khẩu của bạn sẽ vẫn như cũ."
