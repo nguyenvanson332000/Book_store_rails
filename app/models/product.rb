@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
-  belongs_to :category, foreign_key: "categories_id"
   has_many :rates, dependent: :destroy
   has_many :order_details, dependent: :destroy
+  belongs_to :category
 
   delegate :title, to: :category, prefix: true
   validates :name, presence: true, length: {minimum: Settings.validate.length.length_min,
