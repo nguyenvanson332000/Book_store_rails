@@ -1,4 +1,13 @@
 en:
+  active_record:
+    errors:
+      messages:
+        min_8: "min length must be 8"
+  currency:
+    product_price: "$%{price}"
+  mess:
+    errors: "errors"
+    contain: "Contain"
   left_menu:
     dashboard: "Dashboard"
     products: "Management products"
@@ -8,16 +17,24 @@ en:
     statistic: "Management statistic"
     orders: "Management orders"
   crud:
+    action: "Action"
     create: "Create"
     delete: "Delete"
     edit: "Edit"
     update: "Update"
+    back: "Back"
+    detail: "Detail"
   product:
     name: "Name product"
     quantity: "Quantity"
     price: "Price"
     status: "Status"
     author: "Author"
+    detail: "Detail product"
+    publisher: "Publisher"
+    category: "Category"
+    description: "Description"
+    img: "Image"
   language:
     vi: "Vietnamese"
     en: "English"
@@ -56,6 +73,7 @@ en:
       remember: "Remember me"
       btn_create: "Create my account"
       forgot_password: "Forgot Password ?"
+      btn_logout: "Logout"
     edit:
       h1_html: "Update your profile"
       btn_save: "Update my account"
@@ -86,6 +104,12 @@ en:
     pass_reset_has_expired: "Password reset has expired."
     pass_has_been_reset: "Password has been reset."
     cant_be_empty: "can't be empty"
+    create_product_success: "Add new product successful!"
+    update_product_success: "Update product successful!"
+    delete_product_success: "Delete product successful!"
+    update_product_fail: "Update product fail!"
+    confirm_product_delete: "Are you sure to delete this product?"
+    product_empty: "Your list product is an empty"
   mailer:
     book_store: "Book Store"
     hi: "Hello"
@@ -116,3 +140,4 @@ en:
         delimiter: ","
         separator: "."
         precision: "."
+    detail: "Detail"

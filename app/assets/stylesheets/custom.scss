@@ -181,3 +181,29 @@ aside {
 .show-info {
   list-style: none;
 }
+
+.btn-language {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Style the active class (and buttons on mouse-over) */
+.active,
+.btn-language:hover {
+  background-color: #666;
+  color: white;
+}
+
+.backBtn {
+  margin-top: 10px;
+}
+.detailForm {
+  margin-left: 500px;
+}
+
+.th-action {
+  text-align: center;
+}

@@ -1,0 +1,30 @@
+<div id="content">
+  <%= render "shared/change_languages" %>
+  <div class="container-fluid">
+    <div class="row">
+      <%= link_to t("crud.create"), new_product_path,class:"nav-link" %>
+      <h2><%= t"left_menu.products" %></h2>
+      <table class="table table-striped">
+        <thead >
+          <tr>
+            <th><%= t "product.name" %></th>
+            <th><%= t "product.category" %></th>
+            <th><%= t "product.status" %></th>
+            <th><%= t "product.quantity" %></th>
+            <th><%= t "product.price" %></th>
+            <th><%= t "product.author" %></th>
+            <th colspan="3" class="th-action" ><%= t "crud.action" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% unless @products.any? %>
+            <div class="alert alert-danger">
+              <%= t("flash.product_empty") %>
+            </div>
+          <% end %>
+          <%= render @products %>
+        </tbody>
+      </table>
+    <%= paginate @products, theme: "twitter-bootstrap-3" %>
+  </div>
+</div>

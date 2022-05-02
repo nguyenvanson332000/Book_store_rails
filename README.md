@@ -5,20 +5,20 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* rvm install 2.7.0
 
-* System dependencies
+* rvm use 2.7.0 --default
 
-* Configuration
+* gem install rails 6.0.0
 
-* Database creation
+* Database creation(mysql or postgresql)
 
 * Database initialization
 
-* How to run the test suite
+* bundle install
 
-* Services (job queues, cache servers, search engines, etc.)
+* rake db:create
 
-* Deployment instructions
+* rake db:migrate
 
 * ...

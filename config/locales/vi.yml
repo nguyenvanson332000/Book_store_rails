@@ -1,4 +1,13 @@
 vi:
+  active_record:
+    errors:
+      messages:
+        min_8: "tối thiểu phải bằng 8"
+  currency:
+    product_price: "%{price} đ"
+  mess:
+    errors: "errors"
+    contain: "Contain"
   left_menu:
     dashboard: "Trang chủ"
     products: "Quản lí sản phẩm"
@@ -8,16 +17,24 @@ vi:
     statistic: "Quản lí thống kê"
     orders: "Quản lí đơn hàng"
   crud:
+    action: "Chức Năng"
     create: "Thêm mới"
     delete: "Xóa"
     edit: "Chỉnh sửa"
     update: "Cập nhật"
+    back: "Quay Lại"
+    detail: "Chi Tiết"
   product:
     name: "Tên sản phấm"
     quantity: "Số lượng"
     price: "Giá tiền"
     status: "Tình trạng"
     author: "Tác giả"
+    detail: "Chi Tiết Sản Phẩm"
+    publisher: "Nhà xuất bản"
+    category: "Danh mục"
+    description: "Mô tả"
+    img: "Ảnh"
   language:
     vi: "Tiếng Việt"
     en: "Tiếng Anh"
@@ -56,6 +73,7 @@ vi:
       remember: "Hãy ghi nhớ tôi"
       btn_create: "Tạo Tài Khỏan Mới"
       forgot_password: "Quên Mật Khẩu ?"
+      btn_logout: "Đăng Xuất"
     edit:
       h1_html: "Cập nhật hồ sơ cá nhân"
       btn_save: "Cập Nhật Tài Khoản"
@@ -86,6 +104,12 @@ vi:
     pass_reset_has_expired: "Đặt lại mật khẩu đã hết hạn."
     pass_has_been_reset: "Mật khẩu đã được đặt lại."
     cant_be_empty: "không thể để trống"
+    create_product_success: "Thêm mới sản phẩm thành công!"
+    update_product_success: "Cập nhật sản phẩm thành công!"
+    delete_product_success: "Xóa sản phẩm thành công!"
+    update_product_fail: "Cập nhật sản phẩm thất bại!"
+    confirm_product_delete: "Bạn có chắc chắn xóa sản phẩm này?"
+    product_empty: "Danh sách sản phẩm hiện đang trống"
   mailer:
     book_store: "Book Store"
     hi: "Xin Chào"
@@ -112,7 +136,8 @@ vi:
     currency:
       format:
         format: "%n %u"
-        unit: "đ"
+        unit: "đồng"
         separator: "."
         delimiter: ","
         precision: "."
+    detail: "Chi tiết sản phẩm"
