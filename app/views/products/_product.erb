@@ -1,0 +1,26 @@
+<tr>
+  <td><%= product.name %></td>
+  <td><%= product.category_title %></td>
+  <td><%= product.status %></td>
+  <td><%= product.quantity %></td>
+  <td><%= t("currency.product_price", price: product.price) %></td>
+  <td><%= product.author %></td>
+  <td>
+    <%= link_to product_path(product.id), class: "btn btn-success" do %>
+     <i class="zmdi zmdi-eye">
+     </i>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to edit_product_path(product.id), class: "btn btn-info" do %>
+     <i class="zmdi zmdi-edit">
+     </i>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to product_path(product.id), method: :delete, data: {confirm: t("product.confirm_delete")}, class: "btn btn-danger" do %>
+     <i class="zmdi zmdi-delete">
+     </i>
+    <% end %>
+  </td>
+</tr>

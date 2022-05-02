@@ -11,34 +11,38 @@
         </a>
       </li>
       <li>
-        <a href="<%= home_path%>">
-          <i class="zmdi zmdi-link"></i> <%= t"left_menu.products" %>
-        </a>
+        <%= link_to products_path do %>
+          <i class="zmdi zmdi-link"></i>
+          <%= t"left_menu.products" %>
+        <% end %>
       </li>
       <li>
-        <a href="#">
+        <%= link_to "#" do %>
           <i class="zmdi zmdi-widgets"></i> <%= t"left_menu.orders" %>
-        </a>
+        <% end %>
       </li>
       <li>
-        <a href="#">
+        <%= link_to "#" do %>
           <i class="zmdi zmdi-calendar"></i> <%= t"left_menu.categories" %>
-        </a>
+        <% end %>
       </li>
       <li>
-        <a href="#">
+        <%= link_to "#" do %>
           <i class="zmdi zmdi-info-outline"></i> <%= t"left_menu.users" %>
-        </a>
+        <% end %>
       </li>
       <li>
-        <a href="#">
+        <%= link_to "#" do %>
           <i class="zmdi zmdi-settings"></i> <%= t"left_menu.requests" %>
-        </a>
+        <% end %>
       </li>
       <li>
-        <a href="#">
+        <%= link_to "#" do %>
           <i class="zmdi zmdi-comment-more"></i> <%= t"left_menu.statistic" %>
-        </a>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to t("users.new.logout"), logout_path, method: :delete %>
       </li>
       <li>
         <a href="#">

@@ -1,12 +1,12 @@
 <% @products.each do |products| %>
   <div class="col-md-4 text-center col-sm-6 col-xs-6">
     <div class="thumbnail product-box">
-      <%= image_tag("doraemon_tap19.jpg", alt: "rss feed") %>
+      <%= image_tag("conan_14.jpg", alt: "rss feed") %>
       <div class="caption">
         <%= link_to products.name, "#", class: "product-title" %>
         <p>
           <%= t "home.price" %>
-          <strong class="price-st"><%= t(number_to_currency(products.price)) %></strong>
+          <strong class="price-st"><%= (number_to_currency(products.price, precision: 3))%></strong>
         </p>
         <p>
           <%= link_to t("home.add_to_cart"), "#", class: "btn-product btn-success" %>

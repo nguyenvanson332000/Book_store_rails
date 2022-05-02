@@ -7,6 +7,12 @@ validate:
     digist_255: 255
     digist_2: 2
     digist_6: 6
+    length_min: 8
+    length_medium: 50
+    length_max: 255
+    length_normal: 140
+    price_min: 50
+    quantity_min: 10
 size:
   size_avatar: 120
 paginate_size: 5
