@@ -1,4 +1,4 @@
-class CreateOrders < ActiveRecord::Migration[6.0]
+class CreateOrders < ActiveRecord::Migration[6.1]
   def change
     create_table :orders do |t|
       t.string :total_money

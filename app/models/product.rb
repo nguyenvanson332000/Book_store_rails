@@ -2,16 +2,23 @@ class Product < ApplicationRecord
   has_many :rates, dependent: :destroy
   has_many :order_details, dependent: :destroy
   belongs_to :category
+  has_one_attached :image
 
   delegate :title, to: :category, prefix: true
-  validates :name, presence: true, length: {minimum: Settings.validate.length.length_min,
-                                            message: :min_8}
-  validates :price, presence: true, numericality: {greater_than_or_equal_to:
-                                                  Settings.validate.length.price_min}
-  validates :quantity, presence: true, numericality: {greater_than_or_equal_to:
-                                                     Settings.validate.length.quantity_min}
+  enum statuses: { Hot: 0, New: 1, Trend: 2 }
+  validates :name, presence: true, length: { minimum: Settings.validate.length.length_min,
+                                             message: :min_8 }
+  validates :price, presence: true, numericality: { greater_than_or_equal_to: Settings.validate.length.price_min }
+  validates :quantity, presence: true, numericality: { greater_than_or_equal_to: Settings.validate.length.quantity_min }
   validates :author, presence: true
   validates :publisher, presence: true
-  scope :ordered_by_price, ->{order(price: :asc)}
-  scope :sort_by_created, ->{order(created_at: :desc)}
+  validates :image, content_type: { in: %w(image/jpeg image/gif image/png),
+                                    message: I18n.t("image.invalid") },
+                    size: { less_than: 5.megabytes, message: I18n.t("image.min") }
+  scope :ordered_by_price, -> { order(price: :asc) }
+  scope :sort_by_created, -> { order(created_at: :desc) }
+
+  def display_image
+    image.variant resize_to_limit: [100, 100]
+  end
 end

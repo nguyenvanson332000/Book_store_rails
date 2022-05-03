@@ -1,13 +1,15 @@
+<% provide :title, t("header.All_product") %>
 <div id="content">
   <%= render "shared/change_languages" %>
   <div class="container-fluid">
     <div class="row">
-      <%= link_to t("crud.create"), new_product_path,class:"nav-link" %>
+      <%= link_to t("crud.create"), new_product_path, class:"nav-link" %>
       <h2><%= t"left_menu.products" %></h2>
       <table class="table table-striped">
         <thead >
           <tr>
             <th><%= t "product.name" %></th>
+            <th><%= t "product.img" %></th>
             <th><%= t "product.category" %></th>
             <th><%= t "product.status" %></th>
             <th><%= t "product.quantity" %></th>
@@ -25,6 +27,6 @@
           <%= render @products %>
         </tbody>
       </table>
-    <%= paginate @products, theme: "twitter-bootstrap-3" %>
+      <%= paginate @products, theme: "twitter-bootstrap-3" %>
+    </div>
   </div>
-</div>

@@ -1,0 +1,56 @@
+<%= form_for @product do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="card">
+    <div class="card-body">
+      <div class="mb-5">
+        <%= f.label :image, t("product.img") %>
+        <%= f.label :image, "<span>*</span>".html_safe %>
+        <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png", class: "form-control" %>
+      </div>
+      <div class="mb-5">
+        <%= f.label :name, t("product.name") %>
+        <%= f.label :name, "<span>*</span>".html_safe %>
+        <%= f.text_field :name, { class: "form-control", placeholder: "" } %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :price, t("product.price")  %>
+        <%= f.label :price, "<span>*</span>".html_safe %>
+        <%= f.text_field :price, { class: "form-control", placeholder: "" } %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :quantity, t("product.quantity") %>
+        <%= f.label :quantity, "<span>*</span>".html_safe %>
+        <%= f.text_field :quantity, { class: "form-control", placeholder: "" } %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :status, t("product.status") %>
+        <%= f.label :status, "<span>*</span>".html_safe %>
+        <%= f.select(:status, Product.statuses.keys, {},{:class=>"form-control"}) %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :author, t("product.author") %>
+        <%= f.label :author, "<span>*</span>".html_safe %>
+        <%= f.text_field :author, { class: "form-control", placeholder: "" } %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :description, t("product.description") %>
+        <%= f.text_area  :description, { class: "form-control", placeholder: "" } %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :publisher, t("product.publisher") %>
+        <%= f.label :publisher, "<span>*</span>".html_safe %>
+        <%= f.text_field :publisher, { class: "form-control", placeholder: "" } %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :category_id, t("product.category") %>
+        <%= f.label :category_id, "<span>*</span>".html_safe %>
+        <%= collection_select(:product, :category_id, Category.all, :id, :title,{},{:class=>"form-control"})%>
+      </div>
+      <div class="mb-3">
+        <%= f.submit yield(:button_text), class: "btn btn-primary submit" %>
+        <%= link_to t("crud.back"), { controller: 'products', action: 'index'},
+          class: "btn btn-success backBtn" %>
+      </div>
+    </div>
+  </div>
+<% end %>

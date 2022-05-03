@@ -1,4 +1,4 @@
-class CreateSuggests < ActiveRecord::Migration[6.0]
+class CreateSuggests < ActiveRecord::Migration[6.1]
   def change
     create_table :suggests do |t|
       t.string :title

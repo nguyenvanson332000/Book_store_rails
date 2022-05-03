@@ -49,6 +49,8 @@ en:
     book: "Book"
     store: "store"
     home: "Home"
+    All_product: "All Product"
+    new_product: "New Product"
   title:
     sign_up: "Sign up"
     login: "Login"
@@ -141,3 +143,6 @@ en:
         separator: "."
         precision: "."
     detail: "Detail"
+  image:
+    invalid: "Must be a valid image format!"
+    min: "Should be less than 5MB!"
