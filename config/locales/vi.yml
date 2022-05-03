@@ -6,8 +6,8 @@ vi:
   currency:
     product_price: "%{price} đ"
   mess:
-    errors: "errors"
-    contain: "Contain"
+    errors: "lỗi"
+    contain: "Tồn tại"
   left_menu:
     dashboard: "Trang chủ"
     products: "Quản lí sản phẩm"
@@ -49,6 +49,8 @@ vi:
     book: "Book"
     store: "store"
     home: "Trang chủ"
+    All_product: "Tất cả các sản phẩm"
+    new_product: "Thêm sản phẩm"
   title:
     sign_up: "Đăng ký"
     login: "Đăng nhập"
@@ -141,3 +143,6 @@ vi:
         delimiter: ","
         precision: "."
     detail: "Chi tiết sản phẩm"
+  image:
+    invalid: "Phải phù hợp với format!"
+    min: "Phải nhỏ hơn 5MB!"

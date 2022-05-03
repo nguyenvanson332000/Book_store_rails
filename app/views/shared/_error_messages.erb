@@ -2,7 +2,7 @@
   <div id="error_explanation">
     <div class="alert alert-danger">
       <%= t"mess.contain" %>
-      <%= pluralize object.errors.size, t"mess.errors" %>.
+      <%= pluralize object.errors.size, t("mess.errors") %>.
     </div>
     <ul>
       <% object.errors.full_messages.each do |msg| %>

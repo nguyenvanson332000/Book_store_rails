@@ -1,5 +1,8 @@
 <tr>
   <td><%= product.name %></td>
+  <td class="td-img">
+    <%= image_tag product.display_image if product.image.attached? %>
+  </td>
   <td><%= product.category_title %></td>
   <td><%= product.status %></td>
   <td><%= product.quantity %></td>
