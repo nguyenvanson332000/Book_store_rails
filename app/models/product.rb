@@ -30,7 +30,7 @@ class Product < ApplicationRecord
     image.variant resize_to_limit: [5000, 5000]
   end
 
-  def check_enought_quantity? quantity_params
+  def check_enough_quantity? quantity_params
     quantity_params.positive? && quantity >= quantity_params
   end
 end
