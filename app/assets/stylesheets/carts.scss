@@ -1,0 +1,175 @@
+// Place all the styles related to the carts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "color";
+.ty-table {
+  margin-top: 10px;
+  border: none;
+}
+.vs-cart-page .ty-mainbox-cart__body .ty-table th {
+  text-transform: none;
+  font-size: 12px;
+}
+
+.vs-cart-page .ty-mainbox-cart__body .ty-table th {
+  text-transform: none;
+  font-size: 12px;
+}
+.vs-cart-page .ty-mainbox-cart__body .ty-table th {
+  background-color: $gray_white;
+  border: none;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif, sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  padding: 7px 10px;
+  text-shadow: none;
+  color: $white;
+  text-align: right;
+}
+.ty-cart-content .ty-cart-content__product-elem,
+.ty-cart-content .ty-cart-content__title {
+  border: 0;
+}
+.ty-cart-content__title.ty-left {
+  text-align: left;
+}
+.ty-table th,
+.ty-table {
+  border-color: $light_green;
+}
+.ty-section__body .buttons-container,
+.ty-table th {
+  background-color: $translucent_green;
+}
+.ty-table th,
+.ty-table th a {
+  font-weight: bold;
+}
+.ty-table th {
+  padding: 12px;
+  border-right: 1px solid $line_darkgreen;
+  border-bottom: 1px solid $line_darkgreen;
+  background: $darkgreen;
+  text-align: left;
+  text-transform: none;
+  white-space: nowrap;
+  font-weight: bold;
+  line-height: normal;
+}
+.ty-cart-content__title {
+  padding: 12px;
+  border: 1px solid #7fd553;
+  border-right: 0 none;
+  border-left: 0 none;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: bold;
+  background: #edeff1;
+}
+.ty-left {
+  text-align: left;
+}
+.vs-cart-page .ty-mainbox-cart__body .ty-table tr.vs-cart-product td {
+  padding-top: 15px;
+  padding-bottom: 17px;
+  padding-right: 10px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.vs-cart-page .ty-mainbox-cart__body .ty-table .ty-cart-content__image-block {
+  padding-left: 0px;
+}
+.ty-cart-content__image-block {
+  width: 160px;
+}
+.ty-table td,
+.ty-table .table td {
+  border-color: $light_green;
+}
+
+.ty-table td,
+.ty-table .table td {
+  padding: 13px;
+  border-right: 1px solid #ecf0f1;
+  border-bottom: 1px solid #ecf0f1;
+}
+.ty-cart-content__image-block {
+  padding-left: 20px;
+}
+.ty-cart-content__product-elem {
+  padding: 17px 10px;
+  border: none;
+  border-top: 1px solid #7fd553;
+  vertical-align: top;
+}
+.product-title-tb {
+  font-style: normal;
+  font-variant-ligatures: normal;
+  font-variant-caps: normal;
+  font-variant-numeric: normal;
+  font-variant-east-asian: normal;
+  font-weight: bold;
+  font-stretch: normal;
+  font-size: 18px;
+  line-height: normal;
+  font-family: Arial, Helvetica, sans-serif, sans-serif;
+  color: $pink;
+}
+
+.ty-cart-statistic__total-list {
+  margin-top: 10px;
+  padding: 14px 0 17px;
+  border-top: 1px solid #dadada;
+}
+.ty-cart-statistic__total-list {
+  border-top: 1px solid #e0e0e0;
+  margin-top: 15px;
+}
+
+.ty-cart-statistic__total-list li {
+  padding-top: 0;
+}
+.ty-cart-statistic__total {
+  padding: 9px 0 0 0;
+  text-align: right;
+  font-weight: bold;
+  font-size: 138%;
+}
+.ty-cart-statistic__item {
+  clear: both;
+  overflow: hidden;
+  padding: 0 0 0 0;
+  color: $white;
+}
+
+.ty-cart-statistic__total-title {
+  margin-right: 17px;
+}
+.vs-cart-page .ty-cart-statistic__total-list span {
+  font-size: 18px;
+}
+.vs-cart-page .ty-cart-statistic__total-list span {
+  text-transform: uppercase;
+  color: $white;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.ty-cart-content__bottom-buttons {
+  margin: 5px 0 0 0;
+}
+.buttons-container {
+  padding: 5px 20px;
+  border: none;
+  background: #f7f7f7;
+}
+.ty-cart-content__left-buttons {
+  float: left;
+}
+.ty-cart-content__right-buttons {
+  float: right;
+}

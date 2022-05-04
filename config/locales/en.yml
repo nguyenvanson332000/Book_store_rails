@@ -57,6 +57,7 @@ en:
     edit_user: "Edit user"
     forgot_pass: "Forgot password"
     reset_pass: "Reset password"
+    cart: "Cart"
   users:
     form:
       name: "Name"
@@ -112,6 +113,7 @@ en:
     update_product_fail: "Update product fail!"
     confirm_product_delete: "Are you sure to delete this product?"
     product_empty: "Your list product is an empty"
+    product_not_found: "Product not found"
   mailer:
     book_store: "Book Store"
     hi: "Hello"
@@ -134,6 +136,10 @@ en:
     category: "Category"
     author: "Author"
     publisher: "Publisher"
+    stocking: "Stocking"
+    sl_sp: "%{slg} product"
+    solg: "Quantity: "
+    short_description: "Short description: "
   number:
     currency:
       format:
@@ -146,3 +152,15 @@ en:
   image:
     invalid: "Must be a valid image format!"
     min: "Should be less than 5MB!"
+  order:
+    product: "Product"
+    quantity: "Quantity"
+    unit_price: "Unit price"
+    total_price: "Total price"
+    cart: "Cart"
+    continue_shopping: "Continue shopping"
+    pay: "Pay"
+    total: "Total: "
+  cart:
+    add_success: "The product has been added to cart"
+    update_quantity: "The product has been updated to the quantity in the cart"

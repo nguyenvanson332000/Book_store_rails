@@ -1,0 +1,80 @@
+<% provide :title, t("title.cart") %>
+<div>
+  <ol class="breadcrumb">
+    <li><%= link_to t("header.home"), home_client_path %></li>
+    <li class="active"><%= t "order.cart" %></li>
+  </ol>
+</div>
+<div>
+  <table class="ty-cart-content ty-table">
+    <thead>
+      <tr class="vs-cart-header">
+        <th class="ty-cart-content__title ty-left">
+          <%= t "order.product" %>
+        </th>
+        <th class="ty-cart-content__title ty-left"></th>
+        <th class="ty-cart-content__title ty-right">
+          <%= t "order.quantity" %>
+        </th>
+        <th class="ty-cart-content__title quantity-cell">
+          <%= t "order.unit_price" %>
+        </th>
+        <th class="ty-cart-content__title ty-right">
+          <%= t "order.total_price" %>
+        </th>
+        <th class="ty-cart-content__title ty-right"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cart_items.each do |item| %>
+        <tr class="vs-cart-product">
+          <td class="ty-cart-content__product-elem ty-cart-content__image-block">
+            <%= image_tag item[:product].display_image_client if item[:product].image.attached? %>
+          </td>
+          <td class="ty-cart-content__product-elem ty-cart-content__description">
+            <%= link_to item[:product].name, static_page_path(item[:product].id), class: "product-title-tb" %>
+            <div>
+              <%= "#{t("home.author")}:  #{item[:product].author}" %>
+              <br>
+              <%= "#{t("home.publisher")}:  #{item[:product].publisher}" %>
+            </div>
+          </td>
+          <%= form_with do |f| %>
+            <td class="ty-cart-content__product-elem ty-cart-content__qty ">
+              <%= f.number_field :quantity, value: item[:quantity], min: 1, max: item[:product].quantity, class: "form-control width-input" %>
+            </td>
+          <% end %>
+          <td class="ty-cart-content__product-elem ty-cart-content__price">
+            <%= (number_to_currency(item[:product].price, precision: 0)) %>
+          </td>
+          <td class="ty-cart-content__product-elem ty-cart-content__price">
+            <%= number_to_currency(line_total_price(item), precision: 0) %>
+          </td>
+          <td class="ty-cart-content__product-elem ty-cart-content__price">
+            <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div>
+  <ul class="ty-cart-statistic__total-list">
+    <li class="ty-cart-statistic__item ty-cart-statistic__total">
+      <span class="ty-cart-statistic__total-title">
+        <%= t "order.total" %>
+      </span>
+      <span class="ty-cart-statistic__total-value">
+        <%= number_to_currency(total_price, precision: 0) %>
+      </span>
+    </li>
+  </ul>
+</div>
+<div class="buttons-container ty-cart-content__bottom-buttons clearfix">
+  <div class="ty-cart-content__left-buttons">
+    <%= link_to t("order.continue_shopping"), home_client_path, class: "btn-product btn-warning" %>
+  </div>
+  <div class="ty-cart-content__right-buttons">
+    <%= link_to t("order.pay"), "#", class: "btn-product btn-danger" %>
+  </div>
+</div>
