@@ -210,3 +210,20 @@ aside {
 .td-img {
   width: 120px;
 }
+
+.account-func {
+  background-color: #0e74a5;
+  margin: 0 !important;
+  padding: 0 !important;
+  li {
+    width: 110%;
+    border-bottom: 1px solid #1487cfd1;
+    &:last-child {
+      margin-bottom: 0;
+      width: 100% !important;
+    }
+    .account-func-a {
+      color: white;
+    }
+  }
+}
