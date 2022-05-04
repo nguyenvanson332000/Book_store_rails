@@ -21,4 +21,16 @@ class Product < ApplicationRecord
   def display_image
     image.variant resize_to_limit: [100, 100]
   end
+
+  def display_image_client
+    image.variant resize_to_limit: [150, 150]
+  end
+
+  def display_image_client_show
+    image.variant resize_to_limit: [5000, 5000]
+  end
+
+  def check_enought_quantity? quantity_params
+    quantity_params.positive? && quantity >= quantity_params
+  end
 end

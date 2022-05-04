@@ -57,6 +57,7 @@ vi:
     edit_user: "Cập Nhật Người Dùng"
     forgot_pass: "Quên mật khẩu"
     reset_pass: "Đặt lại mật khẩu"
+    cart: "Giỏ hàng"
   users:
     form:
       name: "Tên"
@@ -112,6 +113,7 @@ vi:
     update_product_fail: "Cập nhật sản phẩm thất bại!"
     confirm_product_delete: "Bạn có chắc chắn xóa sản phẩm này?"
     product_empty: "Danh sách sản phẩm hiện đang trống"
+    product_not_found: "Không tìm thấy Sản Phẩm"
   mailer:
     book_store: "Book Store"
     hi: "Xin Chào"
@@ -134,6 +136,10 @@ vi:
     category: "Thể loại"
     author: "Tác giả"
     publisher: "Nhà xuất bản"
+    stocking: "Còn hàng"
+    sl_sp: "%{slg} sản phẩm"
+    solg: "Số lượng: "
+    short_description: "Mô tả ngắn: "
   number:
     currency:
       format:
@@ -146,3 +152,15 @@ vi:
   image:
     invalid: "Phải phù hợp với format!"
     min: "Phải nhỏ hơn 5MB!"
+  order:
+    product: "Sản phẩm"
+    quantity: "Số lượng"
+    unit_price: "Đơn giá"
+    total_price: "Tổng giá"
+    cart: "Giỏ hàng"
+    continue_shopping: "Tiếp tục mua sắm"
+    pay: "Thanh toán"
+    total: "Tổng cộng: "
+  cart:
+    add_success: "Sản phẩm đã được thêm vào giỏ hàng"
+    update_quantity: "Sản phẩm đã được cập nhật số lượng trong giỏ hàng"

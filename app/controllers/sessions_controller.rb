@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
     if user&.authenticate(params[:session][:password])
       check_activated user
     else
-      flash.now[:danger] = t "flash.email_password_combination"
-      redirect_to root_url
+      flash[:danger] = t "flash.email_password_combination"
+      redirect_to login_url
     end
   end
 
@@ -35,7 +35,7 @@ class SessionsController < ApplicationController
 
   def check_admin user
     if user.admin?
-      redirect_back_or home_path
+      redirect_back_or products_path
     else
       redirect_back_or root_url
     end
