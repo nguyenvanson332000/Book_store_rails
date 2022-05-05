@@ -1,0 +1,56 @@
+<% provide :title, t("order.pay") %>
+<div>
+  <ol class="breadcrumb">
+    <li><%= link_to t("order.cart"), carts_path %></li>
+    <li class="active"><%= t "order.pay" %></li>
+  </ol>
+</div>
+<div class="row">
+  <div class="col-md-8">
+    <h3 class="text_bold"><%= t "order.pay" %></h3>
+    <%= form_for(@order) do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <%= f.label :name_customer, t("user.new.name") %>
+      <%= f.text_field :name_customer, class: "form-control", value: current_user.name, required: true %>
+      <%= f.label :phone_number, t("user.new.phone_number") %>
+      <%= f.text_field :phone_number, class: "form-control", value: current_user.phone_number, required: true %>
+      <%= f.label :address, t("user.new.address") %>
+      <%= f.text_field :address, class: "form-control", value: current_user.address, required: true %></br>
+    <%= f.text_field :total_money, class: "form-control", value: total_price, style: "#{'display:none' }",
+          required: true %>
+    <%= f.submit t("order.proceed_order"), class: "btn btn-primary btn-lg btn-block" %>
+  <% end %>
+</div>
+<div class="thumbnail product-box col-md-4">
+  <div class="order-products">
+    <h4 class="text_bold"><%= t "order.order_detail" %></h4>
+    <ul class="order-product-list">
+      <% @cart_items.each do |item| %>
+        <li class="clearfix" id="clearfix-item">
+          <div class="thumbnail col-md-3 image_order">
+            <%= image_tag item[:product].image if item[:product].image.attached? %>
+          </div>
+          <div class="caption col-md-9">
+            <%= link_to item[:product].name, static_page_path(item[:product].id), class: "product-title", id: "product-title-id-name" %>
+            <p>
+              <%= "#{item[:quantity]} x  #{number_to_currency(item[:product].price, precision: 0)}" %>
+            </p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div>
+    <ul class="ty-cart-statistic__total-list">
+      <li class="ty-cart-statistic__item ty-cart-statistic__total", id="ty-cart-statistic__total-title-id">
+        <span class="ty-cart-statistic__total-title">
+          <%= t "order.total" %>
+        </span>
+        <span class="ty-cart-statistic__total-value">
+          <%= number_to_currency(total_price, precision: 0) %>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>

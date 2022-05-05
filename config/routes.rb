@@ -7,9 +7,11 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
-    resources :carts, only: [:index] do
+    resources :carts, only: %i(index) do
       collection do
         post "add_to_cart/:id", to: "carts#add_to_cart", as: "add_to"
+        put "update/:id", to: "carts#update", as: "update_to"
+        delete "delete/:id", to: "carts#delete", as: "delete_from"
       end
     end
     resources :static_pages, only: %i(index show)
@@ -17,5 +19,6 @@ Rails.application.routes.draw do
     resources :account_activations, only: :edit
     resources :password_resets, only: %i(new create edit update)
     resources :products
+    resources :orders, only: %i(new create)
     end
 end

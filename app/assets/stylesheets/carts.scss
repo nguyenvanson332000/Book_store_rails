@@ -65,7 +65,7 @@
 }
 .ty-cart-content__title {
   padding: 12px;
-  border: 1px solid #7fd553;
+  border: 1px solid $light_green;
   border-right: 0 none;
   border-left: 0 none;
   text-align: center;
@@ -97,8 +97,8 @@
 .ty-table td,
 .ty-table .table td {
   padding: 13px;
-  border-right: 1px solid #ecf0f1;
-  border-bottom: 1px solid #ecf0f1;
+  border-right: 1px solid $silver;
+  border-bottom: 1px solid $silver;
 }
 .ty-cart-content__image-block {
   padding-left: 20px;
@@ -106,7 +106,7 @@
 .ty-cart-content__product-elem {
   padding: 17px 10px;
   border: none;
-  border-top: 1px solid #7fd553;
+  border-top: 1px solid $light_green;
   vertical-align: top;
 }
 .product-title-tb {
@@ -152,6 +152,9 @@
 .ty-cart-statistic__total-title {
   margin-right: 17px;
 }
+#ty-cart-statistic__total-title-id {
+  text-align: left !important;
+}
 .vs-cart-page .ty-cart-statistic__total-list span {
   font-size: 18px;
 }
@@ -168,11 +171,35 @@
 .buttons-container {
   padding: 5px 20px;
   border: none;
-  background: #f7f7f7;
+  background: $matte_white;
 }
 .ty-cart-content__left-buttons {
   float: left;
 }
 .ty-cart-content__right-buttons {
   float: right;
+}
+
+.image_order {
+  width: 60px;
+}
+.order-products .order-product-list {
+  padding: 0;
+}
+.order-products li:first-child {
+  padding-top: 0;
+}
+.order-products li {
+  padding: 15px 0;
+  border-bottom: 1px solid $green;
+  list-style: none;
+}
+.text_bold {
+  text-transform: uppercase;
+  color: $white;
+  font-weight: bold;
+}
+
+#clearfix-item {
+  border-bottom: none;
 }

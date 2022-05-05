@@ -41,7 +41,7 @@
           </td>
           <%= form_with do |f| %>
             <td class="ty-cart-content__product-elem ty-cart-content__qty ">
-              <%= f.number_field :quantity, value: item[:quantity], min: 1, max: item[:product].quantity, class: "form-control width-input" %>
+              <%= f.number_field :quantity, value: item[:quantity], min: 1, max: item[:product].quantity, class: "form-control width-input", data: { remote: true, method: :put, url: update_to_carts_path(item[:product]) } %>
             </td>
           <% end %>
           <td class="ty-cart-content__product-elem ty-cart-content__price">
@@ -51,7 +51,10 @@
             <%= number_to_currency(line_total_price(item), precision: 0) %>
           </td>
           <td class="ty-cart-content__product-elem ty-cart-content__price">
-            <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button>
+            <%= link_to delete_from_carts_path(item[:product]), data: { confirm: t("cart.confirm"), method: :delete,
+            remote: true}, class: "btn btn-sm btn-danger" do %>
+              <i class="fa fa-trash"></i>
+            <% end %>
           </td>
         </tr>
       <% end %>
@@ -75,6 +78,6 @@
     <%= link_to t("order.continue_shopping"), home_client_path, class: "btn-product btn-warning" %>
   </div>
   <div class="ty-cart-content__right-buttons">
-    <%= link_to t("order.pay"), "#", class: "btn-product btn-danger" %>
+    <%= link_to t("order.pay"), new_order_path, class: "btn-product btn-danger" %>
   </div>
 </div>

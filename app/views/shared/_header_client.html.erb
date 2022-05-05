@@ -35,9 +35,11 @@
 <div class="wrapper row1">
   <header id="header" class="hoc clear">
     <div id="logo" class="one_half first">
-      <h1 class="logoname"><a href="index.html">
+      <h1 class="logoname">
+        <%= link_to home_client_path do%>
           <span><%= t "header.book" %></span>
-          <%= t "header.store" %></a>
+          <%= t "header.store" %>
+        <% end %>
       </h1>
     </div>
     <div class="one_half">
@@ -59,7 +61,7 @@
   </header>
   <nav id="mainav" class="hoc clear">
     <ul class="clear">
-      <li><a href="index.html">Home</a></li>
+      <li><%= link_to "Home", root_url %></li>
       <li><a class="drop" href="#">Pages</a>
         <ul>
           <li><a href="pages/gallery.html">Gallery</a></li>
