@@ -1,0 +1,20 @@
+<table class="table line-height-1-5">
+  <thead >
+    <tr>
+      <th><%= t "orders.receiver" %></th>
+      <th><%= t "orders.address" %></th>
+      <th><%= t "orders.phone_number" %></th>
+      <th><%= t "orders.status" %></th>
+      <th><%= t "orders.date_order" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= order.name_customer %></td>
+      <td><%= order.address %></td>
+      <td><%= order.phone_number %></td>
+      <td><%= order.status %></td>
+      <td><%= order.created_at %></td>
+    </tr>
+  </tbody>
+</table>

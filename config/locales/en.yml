@@ -116,6 +116,7 @@ en:
     confirm_product_delete: "Are you sure to delete this product?"
     product_empty: "Your list product is an empty"
     product_not_found: "Product not found"
+    not_found: "Not found!"
   mailer:
     book_store: "Book Store"
     hi: "Hello"
@@ -174,3 +175,15 @@ en:
     delete_success: "Delete successfully"
     error_delete: "Delete failed"
     confirm : "Are you sure ?"
+  orders:
+    address: "Address"
+    receiver: "Receiver"
+    phone_number: "Phone number"
+    status: "Status"
+    total_price: "Total price"
+    buyer: "Buyer"
+    email: "Email"
+    total_money: "Total money"
+    ordinal_number: "Ordinal number"
+    date_order: "Date order"
+    total_order: "Total money order"

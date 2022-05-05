@@ -35,7 +35,7 @@ class SessionsController < ApplicationController
 
   def check_admin user
     if user.admin?
-      redirect_back_or products_path
+      redirect_back_or admin_products_path
     else
       redirect_back_or root_url
     end

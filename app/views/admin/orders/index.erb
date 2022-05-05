@@ -1,0 +1,29 @@
+<% provide :title, t("left_menu.orders") %>
+<div id="content">
+  <%= render "shared/change_languages" %>
+  <div class="container-fluid">
+    <div class="row">
+      <h2><%= t "left_menu.orders" %></h2>
+      <table class="table table-striped">
+        <thead >
+          <tr>
+            <th><%= t "orders.receiver" %></th>
+            <th><%= t "orders.status" %></th>
+            <th><%= t "orders.address" %></th>
+            <th><%= t "orders.phone_number" %></th>
+            <th><%= t "orders.total_price" %></th>
+            <th colspan="2" class="th-action" ><%= t "crud.action" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% unless @orders.any? %>
+            <div class="alert alert-danger">
+              <%= t "flash.product_empty" %>
+            </div>
+          <% end %>
+          <%= render @orders %>
+        </tbody>
+      </table>
+      <%= paginate @orders, theme: "twitter-bootstrap-3" %>
+    </div>
+  </div>
