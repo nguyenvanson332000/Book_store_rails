@@ -18,7 +18,12 @@ Rails.application.routes.draw do
     resources :users
     resources :account_activations, only: :edit
     resources :password_resets, only: %i(new create edit update)
-    resources :orders, only: %i(new create)
+    resources :orders, only: %i(new create index) do
+      resources :order_details, only: %i(index)
+      member do
+        put "update_order_status", to: "orders#update_order_status"
+      end
+    end
     namespace :admin do
       resources :products
       resources :orders, except: %i(create destroy)

@@ -1,0 +1,70 @@
+<% provide :title, t("title.my_order") %>
+<div>
+  <ol class="breadcrumb">
+    <li><%= link_to t("header.home"), home_client_path %></li>
+    <li class="active"><%= t "title.my_order" %></li>
+  </ol>
+</div>
+<div>
+  <table class="ty-cart-content ty-table">
+    <thead>
+      <tr class="vs-cart-header">
+        <th class="ty-cart-content__title ty-left">
+          <%= t "order.id" %>
+        </th>
+        <th class="ty-cart-content__title ty-left">
+          <%= t "order.status" %>
+        </th>
+        <th class="ty-cart-content__title ty-right">
+          <%= t "order.name_receiver" %>
+        </th>
+        <th class="ty-cart-content__title quantity-cell">
+          <%= t "order.date_crate" %>
+        </th>
+        <th class="ty-cart-content__title ty-right">
+          <%= t "order.total_money" %>
+        </th>
+        <th class="ty-cart-content__title ty-right">
+          <%= t "order.operation" %>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr class="vs-cart-product">
+          <td class="ty-cart-content__product-elem ty-cart-content__image-block">
+            <%= order.id %>
+          </td>
+          <td class="ty-cart-content__product-elem ty-cart-content__description">
+            <%= order.status %>
+          </td>
+          <td class="ty-cart-content__product-elem ty-cart-content__description">
+            <%= order.name_customer %>
+          </td>
+          <td class="ty-cart-content__product-elem ty-cart-content__price">
+            <%= order.created_at %>
+          </td>
+          <td class="ty-cart-content__product-elem ty-cart-content__price">
+            <%= number_to_currency(order.total_money, precision: 0, locale: :vi) %>
+          </td>
+          <td class="ty-cart-content__product-elem ty-cart-content__price">
+            <%= link_to order_order_details_path(order), class: "btn btn-sm btn-primary" do %>
+              <i class="fa fa-eye"></i>
+            <% end %>
+            <% if order.status == "pending" %>
+              <%= link_to update_order_status_order_path(order, status: :cancel),method: :put, class: "btn btn-sm btn-danger" do %>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div>
+  <div class="buttons-container ty-cart-content__bottom-buttons clearfix">
+    <div class="ty-cart-content__left-buttons">
+      <%= link_to t("order.continue_shopping"), home_client_path, class: "btn-product btn-warning" %>
+    </div>
+  </div>

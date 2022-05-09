@@ -60,6 +60,8 @@ vi:
     forgot_pass: "Quên mật khẩu"
     reset_pass: "Đặt lại mật khẩu"
     cart: "Giỏ hàng"
+    my_order: "Đơn hàng của tôi"
+    order_detail: "Chi tiết đơn hàng"
   users:
     form:
       name: "Tên"
@@ -79,6 +81,7 @@ vi:
       btn_create: "Tạo Tài Khỏan Mới"
       forgot_password: "Quên Mật Khẩu ?"
       btn_logout: "Đăng Xuất"
+      order_history: "Lịch sử đặt hàng"
     edit:
       h1_html: "Cập nhật hồ sơ cá nhân"
       btn_save: "Cập Nhật Tài Khoản"
@@ -117,6 +120,10 @@ vi:
     product_empty: "Danh sách sản phẩm hiện đang trống"
     product_not_found: "Không tìm thấy Sản Phẩm"
     not_found: "Không tìm thấy!"
+    order_not_found: "Không tìm thấy đơn hàng"
+    order_cancel: "Đã hủy đơn hàng "
+    order_cancel_fail: "Hủy đơn hàng thất bại"
+    invalid_status: "Tình trạng không hợp lệ"
   mailer:
     book_store: "Book Store"
     hi: "Xin Chào"
@@ -168,6 +175,13 @@ vi:
     order_detail: "Chi tiết đặt hàng"
     order_success: "Đặt hàng thành công"
     not_valid: "Đặt hàng không hợp lệ"
+    id: "ID"
+    status: "Trạng thái"
+    name_receiver: "Tên người nhận"
+    date_crate: "Ngày đặt"
+    total_money: "Tổng tiền"
+    operation: "Thao tác"
+    cancel: "Hủy đơn hàng"
   cart:
     add_success: "Sản phẩm đã được thêm vào giỏ hàng"
     update_quantity: "Sản phẩm đã được cập nhật số lượng trong giỏ hàng"
