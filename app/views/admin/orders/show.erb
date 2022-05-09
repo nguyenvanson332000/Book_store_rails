@@ -1,0 +1,28 @@
+<% provide :title, t("crud.detail") %>
+<div id="content">
+  <%= render "shared/change_languages" %>
+  <div class="row">
+    <div class="col-lg-12 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h2><%= t "orders.buyer" %></h2>
+          <%= render "admin/orders/show/user", user: @order.user %>
+        </div>
+        <div class="card-body">
+          <h2><%= t "orders.order" %></h2>
+          <%= render "admin/orders/show/order", order: @order %>
+        </div>
+        <div class="card-body">
+          <h2><%= t "orders.detail_order" %></h2>
+          <%= render "admin/orders/show/order_details", order_details: @order.order_details %>
+        </div>
+        <div class="d-flex justify-content-end">
+          <h3 class="text-right total-order">
+            <b><%= t "orders.total_order" %></b>:
+            <%= number_to_currency(@total, precision: 0, locale: :vi) %>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -18,7 +18,10 @@ Rails.application.routes.draw do
     resources :users
     resources :account_activations, only: :edit
     resources :password_resets, only: %i(new create edit update)
-    resources :products
     resources :orders, only: %i(new create)
+    namespace :admin do
+      resources :products
+      resources :orders, except: %i(create destroy)
     end
+  end
 end
