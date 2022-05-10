@@ -60,6 +60,8 @@ en:
     forgot_pass: "Forgot password"
     reset_pass: "Reset password"
     cart: "Cart"
+    my_order: "My order"
+    order_detail: "Order details"
   users:
     form:
       name: "Name"
@@ -79,6 +81,7 @@ en:
       btn_create: "Create my account"
       forgot_password: "Forgot Password ?"
       btn_logout: "Logout"
+      order_history: "Order history"
     edit:
       h1_html: "Update your profile"
       btn_save: "Update my account"
@@ -117,6 +120,10 @@ en:
     product_empty: "Your list product is an empty"
     product_not_found: "Product not found"
     not_found: "Not found!"
+    order_not_found: "Order not found"
+    order_cancel: "Order canceled"
+    order_cancel_fail: "Canceled failed order"
+    invalid_status: "Invalid status"
   mailer:
     book_store: "Book Store"
     hi: "Hello"
@@ -168,6 +175,13 @@ en:
     order_detail: "Order details"
     order_success: "Order Success"
     not_valid: "Order not valid"
+    id: "ID"
+    status: "Status"
+    name_receiver: "Recipient's name"
+    date_crate: "Date"
+    total_money: "Total money"
+    operation: "Operation"
+    cancel: "Cancel order"
   cart:
     add_success: "The product has been added to cart"
     update_quantity: "The product has been updated to the quantity in the cart"
