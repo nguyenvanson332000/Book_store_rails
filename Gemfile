@@ -23,6 +23,7 @@ gem "image_processing", "1.9.3"
 gem "active_storage_validations", "0.8.2"
 gem "kaminari"
 gem "bootstrap-kaminari-views"
+gem "acts_as_paranoid"
 
 group :development, :test do
   gem "rspec-rails", "~> 4.0.1"

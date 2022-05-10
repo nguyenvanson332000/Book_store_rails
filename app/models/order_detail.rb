@@ -1,4 +1,5 @@
 class OrderDetail < ApplicationRecord
+  acts_as_paranoid
   belongs_to :order
   belongs_to :product
   before_save :set_total_price

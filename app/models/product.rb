@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  acts_as_paranoid
   has_many :rates, dependent: :destroy
   has_many :order_details, dependent: :destroy
   belongs_to :category

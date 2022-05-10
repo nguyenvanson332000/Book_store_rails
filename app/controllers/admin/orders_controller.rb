@@ -1,4 +1,4 @@
-class Admin::OrdersController < ApplicationController
+class Admin::OrdersController < Admin::AdminController
   before_action :load_order, only: %i(show)
   def index
     @orders = Order.ordered_by_price.page(params[:page]).per(Settings.paginate_size)

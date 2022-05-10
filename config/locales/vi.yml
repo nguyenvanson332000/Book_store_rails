@@ -37,6 +37,7 @@ vi:
     img: "Ảnh"
     not_valid: "Sản phẩm không hợp lệ"
     out_stock: "Hết Sản Phẩm"
+    confirm_delete: "Bạn có chắc chắn xóa sản phẩm này?"
   language:
     vi: "Tiếng Việt"
     en: "Tiếng Anh"
@@ -124,6 +125,9 @@ vi:
     order_cancel: "Đã hủy đơn hàng "
     order_cancel_fail: "Hủy đơn hàng thất bại"
     invalid_status: "Tình trạng không hợp lệ"
+    destroy_product_success: "Ẩn sản phẩm thành công!"
+    destroy_product_fail: "Ẩn sản phẩm thất bại!"
+    reject_access: "Bạn không có quyền truy cập!"
   mailer:
     book_store: "Book Store"
     hi: "Xin Chào"

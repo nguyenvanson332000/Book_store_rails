@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_03_155047) do
+ActiveRecord::Schema.define(version: 2022_05_10_163214) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 2022_05_03_155047) do
     t.bigint "product_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_order_details_on_deleted_at"
     t.index ["order_id"], name: "index_order_details_on_order_id"
     t.index ["product_id"], name: "index_order_details_on_product_id"
   end
@@ -82,7 +84,9 @@ ActiveRecord::Schema.define(version: 2022_05_03_155047) do
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "deleted_at"
     t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["deleted_at"], name: "index_products_on_deleted_at"
   end
 
   create_table "rates", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
