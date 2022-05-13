@@ -128,6 +128,10 @@ vi:
     destroy_product_success: "Ẩn sản phẩm thành công!"
     destroy_product_fail: "Ẩn sản phẩm thất bại!"
     reject_access: "Bạn không có quyền truy cập!"
+    confirm: "Bạn có chắc chắn không?"
+    update_order_succ: "Cập nhật tình trạng đơn hàng thành công!"
+    update_order_fail: "Cập nhật tình trạng đơn hàng thất bại!"
+    update_order_already: "Tình trạng đã cập nhật rồi!"
   mailer:
     book_store: "Book Store"
     hi: "Xin Chào"
@@ -207,3 +211,11 @@ vi:
     total_order: "Tổng tiền hóa đơn"
     detail_order: "Chi tiết hóa đơn"
     order: "Hóa đơn"
+  orders_mailer:
+    content_change: "Tình trạng đơn hàng của bạn đã thay đổi,
+    vui lòng xem nội dung để biết thêm"
+    quantity: "Số Lượng: "
+    price: "Đơn Giá: "
+    total_price: "Tổng Tiền: "
+  order_mailer:
+    title: "Cập Nhật Trạng Thái Đơn Hàng"

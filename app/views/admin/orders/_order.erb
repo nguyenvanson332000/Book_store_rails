@@ -10,10 +10,25 @@
       </i>
     <% end %>
   </td>
-  <td>
-    <%= link_to "#", class: "btn btn-info" do %>
-      <i class="zmdi zmdi-edit">
-      </i>
-    <% end %>
-  </td>
+  <% if order.pending? %>
+    <td>
+      <%= link_to approve_admin_order_path(order.id), method: :put, data: {confirm: t("flash.confirm")}, class: "btn btn-success" do %>
+        <i class="zmdi zmdi-check">
+        </i>
+      <% end %>
+    </td>
+    <td>
+      <%= link_to reject_admin_order_path(order.id), method: :put, data: {confirm: t("flash.confirm")}, class: "btn btn-danger" do %>
+        <i class="zmdi zmdi-close">
+        </i>
+      <% end %>
+    </td>
+  <% elsif order.approve? %>
+    <td>
+      <%= link_to reject_admin_order_path(order.id), method: :put, data: {confirm: t("flash.confirm")}, class: "btn btn-danger" do %>
+        <i class="zmdi zmdi-delete">
+        </i>
+      <% end %>
+    </td>
+  <% end %>
 </tr>
