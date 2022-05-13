@@ -28,6 +28,7 @@
         <% else %>
           <li><%= link_to t("header.login"), login_path %></li>
           <li><%= link_to t("header.sign_up"), signup_path %></li>
+          <li><%= link_to "", carts_path, class: "fa fa-shopping-cart" %></li>
         <% end %>
       </ul>
     </div>

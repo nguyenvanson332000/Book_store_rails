@@ -6,7 +6,7 @@
   <td><%= product.category_title %></td>
   <td><%= product.status %></td>
   <td><%= product.quantity %></td>
-  <td><%= t("currency.product_price", price: product.price) %></td>
+  <td><%= number_to_currency(product.price, precision: 0, locale: :vi) %></td>
   <td><%= product.author %></td>
   <td>
     <%= link_to admin_product_path(product.id), class: "btn btn-success" do %>
@@ -22,7 +22,7 @@
   </td>
   <td>
     <%= link_to admin_product_path(product.id), method: :delete, data: {confirm: t("product.confirm_delete")}, class: "btn btn-danger" do %>
-      <i class="zmdi zmdi-delete">
+      <i class="zmdi zmdi-eye-off">
       </i>
     <% end %>
   </td>

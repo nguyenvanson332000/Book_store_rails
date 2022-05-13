@@ -26,7 +26,12 @@ Rails.application.routes.draw do
     end
     namespace :admin do
       resources :products
-      resources :orders, except: %i(create destroy)
+      resources :orders, except: %i(create destroy) do
+        member do
+          put :approve
+          put :reject
+        end
+      end
     end
   end
 end
