@@ -11,23 +11,22 @@
       <ul class="nospace">
         <li><i class="fas fa-phone rgtspace-5"></i><%= t "header.phone_contact" %> </li>
         <li><i class="fas fa-envelope rgtspace-5"></i> <%= t "header.email_contact" %></li>
-        <% if logged_in? %>
+        <% if user_signed_in? %>
           <li class="dropdown">
             <%= link_to "#", class: "dropdown-toggle", "data-toggle": "dropdown" do %>
-              <%= current_user.name %>
+              <%= t("button.account") %>
               <b class="caret"></b>
             <% end %>
             <ul class="dropdown-menu account-func">
-              <li><%= link_to t("users.new.profile"), current_user, class: "account-func-a"%></li>
               <li><%= link_to t("users.new.order_history"), orders_path , class: "account-func-a"%></li>
-              <li><%= link_to t("users.new.settings"), edit_user_path(current_user), class: "account-func-a" %></li>
-              <li><%= link_to t(".Logout"), logout_path, method: :delete, class: "account-func-a" %> </li>
+              <li><%= link_to t("users.new.settings"), edit_user_registration_path, class: "account-func-a" %></li>
+              <li><%= link_to t(".Logout"), destroy_user_session_path, method: :delete, class: "account-func-a" %> </li>
             </ul>
           </li>
           <li><%= link_to "", carts_path, class: "fa fa-shopping-cart" %></li>
         <% else %>
-          <li><%= link_to t("header.login"), login_path %></li>
-          <li><%= link_to t("header.sign_up"), signup_path %></li>
+          <li><%= link_to t("header.login"), user_session_path %></li>
+          <li><%= link_to t("header.sign_up"), new_user_registration_path %></li>
           <li><%= link_to "", carts_path, class: "fa fa-shopping-cart" %></li>
         <% end %>
       </ul>

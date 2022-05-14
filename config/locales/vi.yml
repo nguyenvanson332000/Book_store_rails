@@ -63,6 +63,8 @@ vi:
     cart: "Giỏ hàng"
     my_order: "Đơn hàng của tôi"
     order_detail: "Chi tiết đơn hàng"
+    resend_confirmation: "Gửi lại xác nhận"
+    unlocks: "Gửi lại hướng dẫn mở khóa"
   users:
     form:
       name: "Tên"
@@ -72,6 +74,7 @@ vi:
       address: "Địa chỉ"
       password: "Mật khẩu"
       password_confirmation: "Nhập lại mật khẩu"
+      current_password: "Mật khẩu hiện tại"
     new:
       new_user: "Người dùng mới? "
       profile: "Hồ sơ"
@@ -86,6 +89,10 @@ vi:
     edit:
       h1_html: "Cập nhật hồ sơ cá nhân"
       btn_save: "Cập Nhật Tài Khoản"
+      waiting_confirmation: "Hiện đang chờ xác nhận cho"
+      note_password: "(để trống nếu bạn không muốn thay đổi nó)"
+      note_password2: "(chúng tôi cần mật khẩu hiện tại của bạn để xác nhận các thay đổi của bạn)"
+      note_password3: "ký tự tối thiểu"
   password_resets:
     edit:
       password: "Mật Khẩu"
@@ -219,3 +226,7 @@ vi:
     total_price: "Tổng Tiền: "
   order_mailer:
     title: "Cập Nhật Trạng Thái Đơn Hàng"
+  button:
+    resend_confirmation_instructions: "Gửi lại hướng dẫn xác nhận"
+    login_with: "Đăng nhập bằng"
+    account: "Tài Khoản"

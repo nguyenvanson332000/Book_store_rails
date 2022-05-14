@@ -1,0 +1,41 @@
+<% provide :title, t("title.login") %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class= "panel panel-default">
+      <div class= "panel-heading">
+        <h1 class="center"><%= t"title.login" %></h1>
+      </div>
+      <div class="panel-body">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= render "users/shared/error_messages", resource: resource %>
+          <div class="field">
+            <%= f.label t "users.form.email" %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label t"users.form.password" %><br />
+            <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+          </div>
+          <% if devise_mapping.rememberable? %>
+            <%= f.label :remember_me, class: "checkbox inline" do %>
+              <%= f.check_box :remember_me, class: "style_checkbox" %>
+              <span><%= t "users.new.remember" %></span>
+            <% end %>
+          <% end %>
+          <div class="actions">
+            <%= f.submit t("title.login"), class: "btn btn-success button_custom" %>
+          </div>
+        <% end %>
+        <%= render "users/shared/links" %>
+        <div class="login_actions">
+          <%= link_to "#", class: "btn btn-primary button_custom auth-form__socials" do %>
+            Login With FaceBook <i class="fa-brands fa-facebook-square"></i>
+          <% end %>
+          <%= link_to "#", class: "btn btn-danger button_custom auth-form__socials" do %>
+            Login With Google <i class="fa-brands fa-google"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

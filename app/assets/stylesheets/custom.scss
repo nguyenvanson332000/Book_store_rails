@@ -231,3 +231,16 @@ aside {
 .alert-admin {
   margin-left: 20%;
 }
+
+.login_actions {
+  width: 100%;
+  display: flex;
+  .auth-form__socials:first-child {
+    width: 48%;
+    margin-right: 1%;
+  }
+  .auth-form__socials:last-child {
+    width: 48%;
+    margin-left: 2%;
+  }
+}

@@ -42,7 +42,7 @@
         <% end %>
       </li>
       <li>
-        <%= link_to t("users.new.logout"), logout_path, method: :delete %>
+        <%= link_to t("users.new.logout"), destroy_user_session_path, method: :delete %>
       </li>
     </ul>
   </div>

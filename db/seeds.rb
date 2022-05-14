@@ -12,5 +12,4 @@ User.create!(name:                  "admin",
              phone_number:                 "0394235659",
              id_card:                 "123456789",
              admin:                 true,
-             activated:             true,
-             activated_at:          Time.zone.now)
+             confirmed_at: Time.zone.now)

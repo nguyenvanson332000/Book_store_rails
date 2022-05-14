@@ -63,6 +63,8 @@ en:
     cart: "Cart"
     my_order: "My order"
     order_detail: "Order details"
+    resend_confirmation: "Resend confirmation"
+    unlocks: "Resend unlock instructions"
   users:
     form:
       name: "Name"
@@ -72,6 +74,9 @@ en:
       address: "Address"
       password: "Password"
       password_confirmation: "Confirmation"
+      current_password: "Current Password"
+    unlocks:
+
     new:
       new_user: "New User? "
       profile: "Profile"
@@ -86,6 +91,10 @@ en:
     edit:
       h1_html: "Update your profile"
       btn_save: "Update my account"
+      waiting_confirmation: "Currently waiting confirmation for"
+      note_password: "(leave blank if you don't want to change it)"
+      note_password2: "(we need your current password to confirm your changes)"
+      note_password3: "characters minimum"
   password_resets:
     edit:
       password: "Password"
@@ -217,3 +226,7 @@ en:
     total_price: "Total Price: "
   order_mailer:
     title: "Update Status Order"
+  button:
+    resend_confirmation_instructions: "Resend confirmation instructions"
+    login_with: "Sign in with"
+    account: "Account"
