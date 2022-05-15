@@ -24,6 +24,8 @@ en:
     update: "Update"
     back: "Back"
     detail: "Detail"
+    search: "Search"
+    choose: "Choose info"
   product:
     name: "Name product"
     quantity: "Quantity"
@@ -38,6 +40,7 @@ en:
     not_valid: "Product not valid"
     out_stock: "Out Stock"
     confirm_delete: "Are you sure to hide this product?"
+    name_author: "Name product or author: "
   language:
     vi: "Vietnamese"
     en: "English"
@@ -141,6 +144,7 @@ en:
     update_order_succ: "Update staus order successful!"
     update_order_fail: "Update status order fail!"
     update_order_already: "Order's status update alreay!"
+    order_empty: "List order is empty, not found"
   mailer:
     book_store: "Book Store"
     hi: "Hello"

@@ -1,0 +1,7 @@
+<%= search_form_for [:admin, @search], class: "form-inline" do |f| %>
+  <div class="form-group form-search">
+    <%= f.label :name_or_author_cont, t("product.name_author") %>
+    <%= f.text_field :name_or_author_cont, class: "form-control" %>
+    <%= f.submit t("crud.search"), class: "btn btn-success form-control" %>
+  </div>
+<% end %>

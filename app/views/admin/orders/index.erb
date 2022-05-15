@@ -3,6 +3,7 @@
   <%= render "shared/change_languages" %>
   <div class="container-fluid">
     <div class="row">
+      <%= render "search_form" %>
       <h2><%= t "left_menu.orders" %></h2>
       <table class="table table-striped">
         <thead >
@@ -18,7 +19,7 @@
         <tbody>
           <% unless @orders.any? %>
             <div class="alert alert-danger">
-              <%= t "flash.product_empty" %>
+              <%= t "flash.order_empty" %>
             </div>
           <% end %>
           <%= render @orders %>

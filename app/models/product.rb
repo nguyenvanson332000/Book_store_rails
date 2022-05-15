@@ -5,6 +5,7 @@ class Product < ApplicationRecord
   belongs_to :category
   has_one_attached :image
 
+  ransack_alias :product ,:name_or_author_or_publisher
   delegate :title, to: :category, prefix: true
   enum statuses: { Hot: 0, New: 1, Trend: 2 }
   validates :name, presence: true, length: { minimum: Settings.validate.length.length_min,
