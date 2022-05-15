@@ -1,0 +1,31 @@
+<% provide(:title, t("title.reset_pass")) %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class= "panel panel-default">
+      <div class= "panel-heading">
+        <h1 class= "center"><%= t "title.reset_pass" %></h1>
+      </div>
+      <div class="panel-body">
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+          <%= render "users/shared/error_messages", resource: resource %>
+          <%= f.hidden_field :reset_password_token %>
+          <div class="field">
+            <%= f.label :password, t("password_resets.edit.password") %><br />
+            <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+            <% end %>
+            <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+          </div>
+          <div class="field">
+            <%= f.label :password_confirmation, t("password_resets.edit.password_confirmation") %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+          </div>
+          <div class="actions">
+            <%= f.submit t("password_resets.edit.btn_submit"), class: "btn btn-primary button_custom" %>
+          </div>
+        <% end %>
+        <%= render "users/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>

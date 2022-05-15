@@ -1,0 +1,23 @@
+<% provide :title, t("title.forgot_pass") %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class= "panel panel-default">
+      <div class= "panel-heading">
+        <h1 class= "center"><%= t"title.forgot_pass" %></h1>
+      </div>
+      <div class="panel-body">
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <%= render "users/shared/error_messages", resource: resource %>
+          <div class="field">
+            <%= f.label t "password_resets.new.email" %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+          </div>
+          <div class="actions">
+            <%= f.submit t("password_resets.new.btn_submit"), class: "btn btn-primary button_custom" %>
+          </div>
+        <% end %>
+        <%= render "users/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>

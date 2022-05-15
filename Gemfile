@@ -24,6 +24,8 @@ gem "active_storage_validations", "0.8.2"
 gem "kaminari"
 gem "bootstrap-kaminari-views"
 gem "acts_as_paranoid"
+gem "devise"
+gem "font-awesome-rails"
 
 group :development, :test do
   gem "rspec-rails", "~> 4.0.1"
