@@ -24,6 +24,8 @@ vi:
     update: "Cập nhật"
     back: "Quay Lại"
     detail: "Chi Tiết"
+    search: "Tìm kiếm"
+    choose: "Chọn thông tin"
   product:
     name: "Tên sản phấm"
     quantity: "Số lượng"
@@ -38,6 +40,7 @@ vi:
     not_valid: "Sản phẩm không hợp lệ"
     out_stock: "Hết Sản Phẩm"
     confirm_delete: "Bạn có chắc chắn xóa sản phẩm này?"
+    name_author: "Tên sản phẩm hoặc tác giả: "
   language:
     vi: "Tiếng Việt"
     en: "Tiếng Anh"
@@ -139,6 +142,7 @@ vi:
     update_order_succ: "Cập nhật tình trạng đơn hàng thành công!"
     update_order_fail: "Cập nhật tình trạng đơn hàng thất bại!"
     update_order_already: "Tình trạng đã cập nhật rồi!"
+    order_empty: "Danh sách đơn hàng trống, không tìm thấy đơn hàng"
   mailer:
     book_store: "Book Store"
     hi: "Xin Chào"

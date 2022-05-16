@@ -26,6 +26,7 @@ gem "bootstrap-kaminari-views"
 gem "acts_as_paranoid"
 gem "devise"
 gem "font-awesome-rails"
+gem "ransack"
 
 group :development, :test do
   gem "rspec-rails", "~> 4.0.1"

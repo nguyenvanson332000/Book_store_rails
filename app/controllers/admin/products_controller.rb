@@ -1,7 +1,8 @@
 class Admin::ProductsController < Admin::AdminController
   before_action :load_product, only: %i(edit update destroy)
   def index
-    @products = Product.ordered_by_price.page(params[:page]).per(Settings.paginate_size)
+    @search = Product.ransack(params[:q])
+    @products = @search.result(distinct: true).ordered_by_price.page(params[:page]).per(Settings.paginate_size)
   end
 
   def new
