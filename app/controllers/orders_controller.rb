@@ -4,7 +4,8 @@ class OrdersController < ApplicationController
   before_action :check_status?, only: %i(update_order_status)
 
   def index
-    @orders = current_user.orders.sort_by_created.page(params[:page]).per(Settings.per_page)
+    @search1 = current_user.orders.ransack(params[:q])
+    @orders = @search1.result(distinct: true).sort_by_created.page(params[:page]).per(Settings.per_page)
   end
 
   def new

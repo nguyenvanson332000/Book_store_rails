@@ -1,0 +1,6 @@
+<%= search_form_for @search, url: root_url , class: "form-inline" do |f| %>
+  <div class="form-group form-search-client">
+    <%= f.text_field :name_or_author_cont, placeholder: t("product.name_author"),class: "form-control" %>
+    <%= button_tag " ", class: "btn btn-success fa-solid fa-magnifying-glass form-control" %>
+  </div>
+<% end %>

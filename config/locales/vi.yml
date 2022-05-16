@@ -41,6 +41,10 @@ vi:
     out_stock: "Hết Sản Phẩm"
     confirm_delete: "Bạn có chắc chắn xóa sản phẩm này?"
     name_author: "Tên sản phẩm hoặc tác giả: "
+    product_trend: "Sản Phẩm Thịnh Hành"
+    product_hot: "Sản Phẩm Bán Chạy"
+    product_new: "Sản Phẩm Mới"
+    product_price: "Sắp xếp theo Giá"
   language:
     vi: "Tiếng Việt"
     en: "Tiếng Anh"

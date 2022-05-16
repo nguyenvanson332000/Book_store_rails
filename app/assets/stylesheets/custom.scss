@@ -249,3 +249,32 @@ aside {
   padding: 20px 0px 60px 0px;
   float: right;
 }
+
+.form-search-client {
+  width: 100%;
+  height: 80%;
+}
+
+.fl_right_search {
+  margin-top: 6px;
+}
+
+.list-status-product {
+  li {
+    list-style: none;
+    text-align: left !important;
+    .btn {
+      text-align: left !important;
+    }
+  }
+}
+
+.btn-sort-price {
+  a {
+    color: rgb(243, 239, 239) !important;
+  }
+}
+
+.search_form_user_order {
+  float: right;
+}

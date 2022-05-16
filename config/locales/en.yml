@@ -41,6 +41,10 @@ en:
     out_stock: "Out Stock"
     confirm_delete: "Are you sure to hide this product?"
     name_author: "Name product or author: "
+    product_trend: "Trending Products"
+    product_hot: "Selling Products"
+    product_new: "New Products"
+    product_price: "Sort By Price"
   language:
     vi: "Vietnamese"
     en: "English"
