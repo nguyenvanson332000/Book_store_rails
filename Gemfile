@@ -27,6 +27,11 @@ gem "acts_as_paranoid"
 gem "devise"
 gem "font-awesome-rails"
 gem "ransack"
+gem "omniauth"
+gem "omniauth-facebook"
+gem "omniauth-google-oauth2"
+gem "omniauth-rails_csrf_protection"
+gem "figaro"
 
 group :development, :test do
   gem "rspec-rails", "~> 4.0.1"

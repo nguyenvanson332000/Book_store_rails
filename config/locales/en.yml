@@ -238,3 +238,5 @@ en:
     resend_confirmation_instructions: "Resend confirmation instructions"
     login_with: "Sign in with"
     account: "Account"
+    login_with_google: "Sign in with Google"
+    login_with_facebook: "Sign in with Facebook"

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users, only: :omniauth_callbacks,
+              controllers: {omniauth_callbacks: "omniauth_callbacks"}
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
     get "home", to: "static_pages#home", as: :home_client
-    devise_for :users
+    devise_for :users, skip: :omniauth_callbacks
     as :user do
       get "signup", to: "devise/registrations#new"
       get "login", to: "devise/sessions#new"
