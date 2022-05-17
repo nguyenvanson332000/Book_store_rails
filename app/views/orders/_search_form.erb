@@ -1,0 +1,8 @@
+<%= search_form_for  @search1, url: orders_url , class: "form-inline" do |f| %>
+  <div class="form-group form-search">
+    <%= f.label :status_eq, t("order.status"), class: "form-control" %>
+    <%= f.select(:status_eq, options_for_select(statuses, f.object.status_eq),
+    { include_blank: t("crud.choose")}, {class: "form-control" }) %>
+    <%= button_tag " ", class: "btn btn-success fa-solid fa-magnifying-glass form-control" %>
+  </div>
+<% end %>

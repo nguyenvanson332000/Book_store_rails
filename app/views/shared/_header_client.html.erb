@@ -5,11 +5,11 @@
         <li><%= link_to "", home_client_path, class: "fas fa-home fa-lg"%></li>
         <li><%= link_to t("language.en"), locale:"en" %></li>
         <li><%= link_to t("language.vi"), locale:"vi" %></li>
+        <li><%= render "shared/search_form" %></li>
       </ul>
     </div>
-    <div class="fl_right">
-      <ul class="nospace">
-        <li><i class="fas fa-phone rgtspace-5"></i><%= t "header.phone_contact" %> </li>
+    <div class="fl_right fl_right_search">
+      <ul class="nospace ">
         <li><i class="fas fa-envelope rgtspace-5"></i> <%= t "header.email_contact" %></li>
         <% if user_signed_in? %>
           <li class="dropdown">

@@ -4,7 +4,7 @@ class Order < ApplicationRecord
   has_many :products, through: :order_details
 
   scope :ordered_by_price, -> { order(:total_money) }
-  scope :sort_by_created, -> { order(created_at: :desc) }
+  scope :sort_by_created, -> { order(created_at: :asc) }
   delegate :email, :name, to: :user, prefix: true
   enum status: { pending: 0, approve: 1, not_accept: 2, cancel: 3 }
   validates :name_customer, presence: true,

@@ -43,10 +43,31 @@
       </ul>
     </div>
     <div>
-      <ul class="list-group">
-        <li class="list-group-item list-group-item-success"><a href="#">Sản phẩm mới</a></li>
-        <li class="list-group-item list-group-item-info"><a href="#">Sản phẩm Hot</a></li>
-        <li class="list-group-item list-group-item-warning"><a href="#">Sản phẩm sắp ra mắt</a></li>
+      <ul class="list-group list-status-product">
+        <li>
+          <%= search_form_for @search, url: root_url , class: "form-inline" do |f| %>
+            <div class="form-group form-search-client">
+              <%= f.hidden_field :status_eq, :value => "Trend" %>
+              <%= f.submit t("product.product_trend"), class: "btn list-group-item list-group-item-success" %>
+            </div>
+          <% end %>
+        </li>
+        <li>
+          <%= search_form_for @search, url: root_url , class: "form-inline" do |f| %>
+            <div class="form-group form-search-client">
+              <%= f.hidden_field :status_eq, :value => "Hot" %>
+              <%= f.submit t("product.product_hot"), class: "btn list-group-item list-group-item-success" %>
+            </div>
+          <% end %>
+        </li>
+        <li>
+          <%= search_form_for @search, url: root_url , class: "form-inline" do |f| %>
+            <div class="form-group form-search-client">
+              <%= f.hidden_field :status_eq, :value => "New" %>
+              <%= f.submit t("product.product_new"), class: "btn list-group-item list-group-item-warning" %>
+            </div>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>
@@ -58,18 +79,10 @@
     </div>
     <div class="row">
       <div class="btn-group alg-right-pad">
-        <button type="button" class="btn btn-default"><strong>1235  </strong>items</button>
-        <div class="btn-group">
-          <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-            Sort Products &nbsp;
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a href="#">By Price Low</a></li>
-            <li class="divider"></li>
-            <li><a href="#">By Price High</a></li>
-            <li class="divider"></li>
-          </ul>
+        <div class="btn btn-group btn-danger">
+          <div class = "btn-sort-price">
+            <%= sort_link @search, :price, t("product.product_price"), @search.result.ordered_by_price %>
+          </div>
         </div>
       </div>
     </div>

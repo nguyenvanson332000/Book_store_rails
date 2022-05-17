@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   belongs_to :category
   has_one_attached :image
 
-  ransack_alias :product ,:name_or_author_or_publisher
+  ransack_alias :product ,:name_or_author_cont
   delegate :title, to: :category, prefix: true
   enum statuses: { Hot: 0, New: 1, Trend: 2 }
   validates :name, presence: true, length: { minimum: Settings.validate.length.length_min,
@@ -18,6 +18,7 @@ class Product < ApplicationRecord
                                     message: I18n.t("image.invalid") },
                     size: { less_than: 5.megabytes, message: I18n.t("image.min") }
   scope :ordered_by_price, -> { order(price: :asc) }
+  scope :ordered_by_price_desc, -> {order(price: :desc)}
   scope :sort_by_created, -> { order(created_at: :desc) }
 
   def display_image
