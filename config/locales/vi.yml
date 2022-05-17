@@ -147,6 +147,7 @@ vi:
     update_order_fail: "Cập nhật tình trạng đơn hàng thất bại!"
     update_order_already: "Tình trạng đã cập nhật rồi!"
     order_empty: "Danh sách đơn hàng trống, không tìm thấy đơn hàng"
+    not_login: "Hãy đăng nhập trước !"
   mailer:
     book_store: "Book Store"
     hi: "Xin Chào"
