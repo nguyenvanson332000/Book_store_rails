@@ -238,3 +238,5 @@ vi:
     resend_confirmation_instructions: "Gửi lại hướng dẫn xác nhận"
     login_with: "Đăng nhập bằng"
     account: "Tài Khoản"
+    login_with_google: "Đăng nhập bằng Google"
+    login_with_facebook: "Đăng nhập bằng Facebook"

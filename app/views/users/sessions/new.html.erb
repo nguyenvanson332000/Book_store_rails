@@ -28,11 +28,11 @@
         <% end %>
         <%= render "users/shared/links" %>
         <div class="login_actions">
-          <%= link_to "#", class: "btn btn-primary button_custom auth-form__socials" do %>
-            Login With FaceBook <i class="fa-brands fa-facebook-square"></i>
+          <%= link_to user_facebook_omniauth_authorize_path, method: :post, class: "btn btn-primary button_custom auth-form__socials" do %>
+            <%= t("button.login_with_facebook")%> <i class="fa-brands fa-facebook-square"></i>
           <% end %>
-          <%= link_to "#", class: "btn btn-danger button_custom auth-form__socials" do %>
-            Login With Google <i class="fa-brands fa-google"></i>
+          <%= link_to user_google_oauth2_omniauth_authorize_path , method: :post, class: "btn btn-danger button_custom auth-form__socials" do %>
+            <%= t("button.login_with_google")%> <i class="fa-brands fa-google"></i>
           <% end %>
         </div>
       </div>
