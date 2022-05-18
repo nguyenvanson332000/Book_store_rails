@@ -72,6 +72,7 @@ en:
     order_detail: "Order details"
     resend_confirmation: "Resend confirmation"
     unlocks: "Resend unlock instructions"
+    order_statistic: "Order quantity statistics"
   users:
     form:
       name: "Name"
@@ -208,6 +209,11 @@ en:
     total_money: "Total money"
     operation: "Operation"
     cancel: "Cancel order"
+    statistic:
+      month: "Statistic orders by month"
+      year: "Statistic orders by year"
+      quarter: "Statistic orders by quarter"
+      day: "Statistic orders by day"
   cart:
     add_success: "The product has been added to cart"
     update_quantity: "The product has been updated to the quantity in the cart"

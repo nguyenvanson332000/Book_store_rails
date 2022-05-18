@@ -1,0 +1,22 @@
+<% provide :title, t("title.order_statistic") %>
+<div id="content">
+  <%= render "shared/change_languages" %>
+  <div class="container-fluid">
+    <div class="row">
+      <h1><%= t"order.statistic.day" %></h1>
+      <%= line_chart Order.group(:status).group_by_day(:created_at).count %>
+    </div>
+    <div class="row">
+      <h1><%= t"order.statistic.month" %></h1>
+      <%= line_chart Order.group(:status).group_by_month(:created_at).count %>
+    </div>
+    <div class="row">
+      <h1><%= t"order.statistic.quarter" %></h1>
+      <%= column_chart Order.group(:status).group_by_quarter(:created_at).count %>
+    </div>
+    <div class="row">
+      <h1><%= t"order.statistic.year" %></h1>
+      <%= pie_chart Order.approved.group_by_year(:created_at).count, donut: true %>
+    </div>
+  </div>
+</div>

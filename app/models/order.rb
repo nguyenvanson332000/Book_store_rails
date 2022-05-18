@@ -5,6 +5,7 @@ class Order < ApplicationRecord
 
   scope :ordered_by_price, -> { order(:total_money) }
   scope :sort_by_created, -> { order(created_at: :asc) }
+  scope :approved, ->{where(status: :approve)}
   delegate :email, :name, to: :user, prefix: true
   enum status: { pending: 0, approve: 1, not_accept: 2, cancel: 3 }
   validates :name_customer, presence: true,

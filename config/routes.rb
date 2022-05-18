@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, only: :omniauth_callbacks,
-              controllers: {omniauth_callbacks: "omniauth_callbacks"}
+                     controllers: { omniauth_callbacks: "omniauth_callbacks" }
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
     get "home", to: "static_pages#home", as: :home_client
@@ -35,6 +35,7 @@ Rails.application.routes.draw do
           put :reject
         end
       end
+      resources :statistics, only: %i(index)
     end
   end
 end
