@@ -16,3 +16,6 @@ validate:
 size:
   size_avatar: 120
 paginate_size: 5
+banner:
+  lock: "lock"
+  unlock: "unlock"

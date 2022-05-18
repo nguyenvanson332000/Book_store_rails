@@ -83,8 +83,17 @@ en:
       password: "Password"
       password_confirmation: "Confirmation"
       current_password: "Current Password"
+      name_email_form: "search by name or email or phone number: "
     unlocks:
-
+      lock: "Lock"
+      unlock: "Unlock"
+      about: "Information"
+      userid: "User Id"
+      name: "Name"
+      email: "Email address"
+      phone: "Phone number"
+      role: "Permissions"
+      address: "Address"
     new:
       new_user: "New User? "
       profile: "Profile"
@@ -151,6 +160,7 @@ en:
     update_order_already: "Order's status update alreay!"
     order_empty: "List order is empty, not found"
     not_login: "Please Login Now !"
+    process_success: "Process Success"
   mailer:
     book_store: "Book Store"
     hi: "Hello"

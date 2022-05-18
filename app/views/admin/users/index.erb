@@ -1,0 +1,37 @@
+<% provide :title, t("left_menu.users") %>
+<div id="content">
+  <%= render "shared/change_languages" %>
+  <div class="container-fluid">
+    <div class="row">
+      <%= render "search_form" %>
+      <h2><%= t"left_menu.users" %></h2>
+      <table class="table table-striped">
+        <thead >
+          <tr>
+            <th scope="col">
+              <%= t "users.unlocks.name" %>
+            </th>
+            <th scope="col">
+              <%= t "users.unlocks.emali" %>
+            </th>
+            <th scope="col">
+              <%= t "users.unlocks.phone" %>
+            </th>
+            <th scope="col">
+              <%= t "users.unlocks.address" %>
+            </th>
+            <th colspan="4" class="th-action" ><%= t "crud.action" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% unless @users.any? %>
+            <div class="alert alert-danger">
+              <%= t "flash.order_empty" %>
+            </div>
+          <% end %>
+          <%= render @users %>
+        </tbody>
+      </table>
+      <%= paginate @users, theme: "twitter-bootstrap-3" %>
+    </div>
+  </div>
