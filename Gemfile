@@ -33,6 +33,8 @@ gem "omniauth-google-oauth2"
 gem "omniauth-rails_csrf_protection"
 gem "figaro"
 gem "cancancan"
+gem "chartkick"
+gem "groupdate"
 
 group :development, :test do
   gem "rspec-rails", "~> 4.0.1"

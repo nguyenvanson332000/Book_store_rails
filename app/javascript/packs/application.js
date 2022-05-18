@@ -11,6 +11,7 @@ import "channels"
 import "@fortawesome/fontawesome-free/css/all"
 require( "jquery" )
 import "bootstrap"
+import "chartkick/chart.js"
 
 Rails.start()
 Turbolinks.start()
