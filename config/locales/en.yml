@@ -149,6 +149,7 @@ en:
     update_order_fail: "Update status order fail!"
     update_order_already: "Order's status update alreay!"
     order_empty: "List order is empty, not found"
+    not_login: "Please Login Now !"
   mailer:
     book_store: "Book Store"
     hi: "Hello"

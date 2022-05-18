@@ -14,6 +14,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  rescue_from CanCan::AccessDenied do |_exception|
+    if user_signed_in?
+      flash[:danger] = t "flash.reject_access"
+      redirect_to root_path
+    else
+      flash[:danger] = t "flash.not_login"
+      redirect_to login_path
+    end
+  end
+
   private
 
   def set_locale
