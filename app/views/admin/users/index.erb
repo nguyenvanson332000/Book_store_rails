@@ -20,7 +20,7 @@
             <th scope="col">
               <%= t "users.unlocks.address" %>
             </th>
-            <th colspan="4" class="th-action" ><%= t "crud.action" %></th>
+            <th colspan="1" class="th-action" ><%= t "crud.action" %></th>
           </tr>
         </thead>
         <tbody>
@@ -33,5 +33,21 @@
         </tbody>
       </table>
       <%= paginate @users, theme: "twitter-bootstrap-3" %>
+    </div>
+    <div class="row">
+      <h1><%= t"users.statistic.day" %></h1>
+      <%= line_chart User.group_by_day(:created_at).count %>
+    </div>
+    <div class="row">
+      <h1><%= t"users.statistic.month" %></h1>
+      <%= line_chart User.group_by_month(:created_at).count %>
+    </div>
+    <div class="row">
+      <h1><%= t"users.statistic.quarter" %></h1>
+      <%= column_chart User.group_by_quarter(:created_at).count %>
+    </div>
+    <div class="row">
+      <h1><%= t"users.statistic.year" %></h1>
+      <%= pie_chart User.group_by_year(:created_at).count, donut: true %>
     </div>
   </div>

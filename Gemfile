@@ -35,6 +35,7 @@ gem "figaro"
 gem "cancancan"
 gem "chartkick"
 gem "groupdate"
+gem "faker"
 
 group :development, :test do
   gem "rspec-rails", "~> 4.0.1"

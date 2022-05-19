@@ -13,3 +13,18 @@ User.create!(name:                  "admin",
              id_card:                 "123456789",
              admin:                 true,
              confirmed_at: Time.zone.now)
+50.times do |n|
+  name  =     Faker::Name.name
+  email =     "example-#{n+1}@railstutorial.org"
+  password =  "password"
+  phone_number = "84#{Faker::Number.leading_zero_number(digits: 8)}"
+  address = Faker::Address.full_address
+  User.create!(name:                  name,
+              email:                  email,
+              phone_number:           phone_number,
+              password:               password,
+              password_confirmation:  password,
+              address:                address,
+              confirmed_at: Time.zone.now,
+              created_at: rand(2.years).seconds.ago)
+end

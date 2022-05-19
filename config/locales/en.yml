@@ -61,6 +61,9 @@ en:
     home: "Home"
     All_product: "All Product"
     new_product: "New Product"
+    new_category: "New Category"
+    all_category: "All Category"
+    edit_category: "Edit Category"
   title:
     sign_up: "Sign up"
     login: "Login"
@@ -112,6 +115,11 @@ en:
       note_password: "(leave blank if you don't want to change it)"
       note_password2: "(we need your current password to confirm your changes)"
       note_password3: "characters minimum"
+    statistic:
+      month: "Statistic users by month"
+      year: "Statistic users by year"
+      quarter: "Statistic users by quarter"
+      day: "Statistic users by day"
   password_resets:
     edit:
       password: "Password"
@@ -145,6 +153,7 @@ en:
     update_product_fail: "Update product fail!"
     confirm_product_delete: "Are you sure to delete this product?"
     product_empty: "Your list product is an empty"
+    category_empty: "Your list category is an empty"
     product_not_found: "Product not found"
     not_found: "Not found!"
     order_not_found: "Order not found"
@@ -161,6 +170,11 @@ en:
     order_empty: "List order is empty, not found"
     not_login: "Please Login Now !"
     process_success: "Process Success"
+    create_category_success: "Create Category Success"
+    update_category_success: "Update Category Success"
+    update_category_fail: "Update Category Fail"
+    destroy_category_success: "Delete Category Success"
+    destroy_category_fail: "Delete Category Fail"
   mailer:
     book_store: "Book Store"
     hi: "Hello"
@@ -257,3 +271,9 @@ en:
     account: "Account"
     login_with_google: "Sign in with Google"
     login_with_facebook: "Sign in with Facebook"
+  category:
+    title: "Title"
+    content: "Content"
+    parent_id: "ID"
+    confirm_delete: "Are you sure to hide this category?"
+    title_or_content: "Search for title, content: "

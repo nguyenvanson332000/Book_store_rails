@@ -4,27 +4,27 @@
   <td><%= order.address %></td>
   <td><%= order.phone_number %></td>
   <td><%= number_to_currency(order.total_money, precision: 0, locale: :vi) %></td>
-  <td>
+  <td class= "text-center">
     <%= link_to admin_order_path(order.id), class: "btn btn-success" do %>
       <i class="zmdi zmdi-eye">
       </i>
     <% end %>
   </td>
   <% if order.pending? %>
-    <td>
+    <td class= "text-center">
       <%= link_to approve_admin_order_path(order.id), method: :put, data: {confirm: t("flash.confirm")}, class: "btn btn-success" do %>
         <i class="zmdi zmdi-check">
         </i>
       <% end %>
     </td>
-    <td>
+    <td class= "text-center">
       <%= link_to reject_admin_order_path(order.id), method: :put, data: {confirm: t("flash.confirm")}, class: "btn btn-danger" do %>
         <i class="zmdi zmdi-close">
         </i>
       <% end %>
     </td>
   <% elsif order.approve? %>
-    <td>
+    <td class= "text-center">
       <%= link_to reject_admin_order_path(order.id), method: :put, data: {confirm: t("flash.confirm")}, class: "btn btn-danger" do %>
         <i class="zmdi zmdi-delete">
         </i>

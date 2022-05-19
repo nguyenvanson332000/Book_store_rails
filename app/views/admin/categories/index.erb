@@ -1,0 +1,29 @@
+<% provide :title, t("header.all_category") %>
+<div id="content">
+  <%= render "shared/change_languages" %>
+  <div class="container-fluid">
+    <div class="row">
+      <%= link_to t("crud.create"), new_admin_category_path, class:"nav-link" %>
+      <%= render "search_form" %>
+      <h2><%= t"left_menu.categories" %></h2>
+      <table class="table table-striped">
+        <thead >
+          <tr>
+            <th><%= t("category.parent_id")%></th>
+            <th> <%= t("category.title")%></th>
+            <th> <%= t("category.content")%></th>
+            <th colspan="2" class="th-action" ><%= t "crud.action" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% unless @categories.any? %>
+            <div class="alert alert-danger">
+              <%= t("flash.category_empty") %>
+            </div>
+          <% end %>
+          <%= render @categories %>
+        </tbody>
+      </table>
+      <%= paginate @categories, theme: "twitter-bootstrap-3" %>
+    </div>
+  </div>
