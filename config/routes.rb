@@ -37,6 +37,7 @@ Rails.application.routes.draw do
       end
       resources :statistics, only: %i(index)
       resources :users, only: %i(index update)
+      resources :categories, except: %i(show)
     end
   end
 end

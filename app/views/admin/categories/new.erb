@@ -1,0 +1,9 @@
+<% provide :title, t("header.new_category") %>
+<% provide :button_text, t("crud.create") %>
+<div id="content">
+  <%= render "shared/change_languages" %>
+  <h2><%= t("header.new_category")%></h2>
+  <div class="container-fluid">
+    <%= render "form" %>
+  </div>
+</div>

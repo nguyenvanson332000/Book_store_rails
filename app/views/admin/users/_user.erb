@@ -3,7 +3,7 @@
   <td><%= user.email %></td>
   <td><%= user.phone_number %></td>
   <td><%= user.address %></td>
-  <td>
+  <td class= "text-center">
     <% unless user&.admin == true %>
       <% if user.locked_at.blank? %>
         <%= button_tag "", type: "button", class: "btn btn-danger fa fa-lock banner-account",  data: {id: "#{user.id}", type: "lock"} %>

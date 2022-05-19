@@ -61,6 +61,9 @@ vi:
     home: "Trang chủ"
     All_product: "Tất cả các sản phẩm"
     new_product: "Thêm sản phẩm"
+    new_category: "Tạo Mới Danh Mục"
+    all_category: "Danh Mục"
+    edit_category: "Chỉnh Sửa Danh Mục"
   title:
     sign_up: "Đăng ký"
     login: "Đăng nhập"
@@ -112,6 +115,11 @@ vi:
       note_password: "(để trống nếu bạn không muốn thay đổi nó)"
       note_password2: "(chúng tôi cần mật khẩu hiện tại của bạn để xác nhận các thay đổi của bạn)"
       note_password3: "ký tự tối thiểu"
+    statistic:
+      month: "Thống kê người dùng đăng kí theo tháng"
+      year: "Thống kê người dùng đăng kí theo năm"
+      quarter: "Thống kê người dùng đăng kí theo quý"
+      day: "Thống kê người dùng đăng kí theo ngày"
   password_resets:
     edit:
       password: "Mật Khẩu"
@@ -145,6 +153,7 @@ vi:
     update_product_fail: "Cập nhật sản phẩm thất bại!"
     confirm_product_delete: "Bạn có chắc chắn xóa sản phẩm này?"
     product_empty: "Danh sách sản phẩm hiện đang trống"
+    category_empty: "Danh sách danh mục hiện đang trống"
     product_not_found: "Không tìm thấy Sản Phẩm"
     not_found: "Không tìm thấy!"
     order_not_found: "Không tìm thấy đơn hàng"
@@ -161,6 +170,11 @@ vi:
     order_empty: "Danh sách đơn hàng trống, không tìm thấy đơn hàng"
     not_login: "Hãy đăng nhập trước !"
     process_success: "Xử lý thành công"
+    create_category_success: "Tạo Danh Mục Thành Công"
+    update_category_success: "Cập Nhật Danh Mục Thành Công"
+    update_category_fail: "Cập Nhật Danh Mục Thất Bại"
+    destroy_category_success: "Xóa Danh Mục Thành Công"
+    destroy_category_fail: "Xóa Danh Mục Thất Bại"
   mailer:
     book_store: "Book Store"
     hi: "Xin Chào"
@@ -259,3 +273,9 @@ vi:
     account: "Tài Khoản"
     login_with_google: "Đăng nhập bằng Google"
     login_with_facebook: "Đăng nhập bằng Facebook"
+  category:
+    title: "Tiêu Đề"
+    content: "Nội Dung"
+    parent_id: "ID"
+    confirm_delete: "Bạn có chắc chắn xóa danh mục này?"
+    title_or_content: "Tìm kiếm theo tiêu đề, nội dung: "
