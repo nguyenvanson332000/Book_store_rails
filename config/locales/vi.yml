@@ -13,7 +13,7 @@ vi:
     products: "Quản lí sản phẩm"
     users: "Quản lí người dùng"
     categories: "Quản lí danh mục"
-    requests: "Quản lí yêu cầu"
+    revenue: "Quản lí doanh thu"
     statistic: "Quản lí thống kê"
     orders: "Quản lí đơn hàng"
   crud:
@@ -279,3 +279,17 @@ vi:
     parent_id: "ID"
     confirm_delete: "Bạn có chắc chắn xóa danh mục này?"
     title_or_content: "Tìm kiếm theo tiêu đề, nội dung: "
+  admin:
+    revenues:
+      index:
+        date: "Chọn ngày"
+        title: "Doanh thu cửa hàng sách"
+        search_date: "Tìm ngày"
+      search_revenue:
+        title: "Doanh thu của ngày"
+        number: "Số thứ tự"
+        user_name: "Tên khách hàng"
+        quantity: "Số lượng"
+        price: "Giá"
+        sum_cost: "Tổng tiền"
+        danger: "Không có doanh thu của ngày này"

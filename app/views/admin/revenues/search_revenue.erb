@@ -1,0 +1,46 @@
+<% provide :title, t(".title") %>
+<div id="content">
+  <%= render "shared/change_languages" %>
+  <div class="container-fluid">
+    <div class="row">
+      <%= form_tag admin_search_revenue_path, method: :get do %>
+        <label><%= t "admin.revenues.index.date" %>:</label>
+        <%= date_field_tag :date, val_date(), class:"form-control" %>
+        <%= submit_tag t("admin.revenues.index.search_date"), class: "btn-info form-control" %>
+      <% end %>
+      <table class="table">
+        <h2 class="text-center pt-4 pb-4 font-weight-bold" >
+          <%= t ".title" %> : <%= params[:date].to_date %>
+        </h2>
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">
+              <%= t ".number" %>
+            </th>
+            <th scope="col">
+              <%= t ".user_name" %>
+            </th>
+            <th scope="col">
+              <%= t ".quantity" %>
+            </th>
+            <th scope="col">
+              <%= t ".price" %>
+            </th>
+          </tr>
+        </thead>
+        <% @orders_by_date.each_with_index do |date, index|%>
+          <tr class="table">
+            <td><%= index + 1 %></td>
+            <td><%= date.user.name %></td>
+            <td><%= date.order_details.count_id_by_order_id(date.id)%></td>
+            <td><%= date.total_money %></td>
+          </tr>
+        <%end%>
+        <tr>
+          <td colspan="3" class = "font-weight-bold"><%= t ".sum_cost" %>:</td>
+          <td class = "btn-success font-weight-bold"><%= @total.values[0] %> VND</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

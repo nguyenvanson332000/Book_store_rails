@@ -1,0 +1,14 @@
+<% provide :title, t(".title") %>
+<div id="content">
+  <%= render "shared/change_languages" %>
+  <div class="container-fluid">
+    <div class="row">
+      <h1><%= t ".title" %></h1>
+      <%= form_tag admin_search_revenue_path,method: :get do %>
+        <label><%= t ".date" %>:</label>
+        <%= date_field_tag :date, val_date() %>
+        <%= submit_tag t(".search_date"), class: "btn-info" %>
+      <% end %>
+    </div>
+  </div>
+</div>

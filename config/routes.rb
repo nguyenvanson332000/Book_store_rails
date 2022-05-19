@@ -38,6 +38,8 @@ Rails.application.routes.draw do
       resources :statistics, only: %i(index)
       resources :users, only: %i(index update)
       resources :categories, except: %i(show)
+      resources :revenues, only: :index
+      get "search_revenue", to: "revenues#search_revenue"
     end
   end
 end

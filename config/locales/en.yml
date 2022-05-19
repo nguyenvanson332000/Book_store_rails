@@ -13,7 +13,7 @@ en:
     products: "Management products"
     users: "Management users"
     categories: "Management category"
-    requests: "Management requests"
+    revenue: "Management revenue"
     statistic: "Management statistic"
     orders: "Management orders"
   crud:
@@ -277,3 +277,17 @@ en:
     parent_id: "ID"
     confirm_delete: "Are you sure to hide this category?"
     title_or_content: "Search for title, content: "
+  admin:
+    revenues:
+      index:
+        date: "Select date"
+        title: "Revenue of Book Store"
+        search_date: "Search"
+      search_revenue:
+        title: "Revenue of day"
+        number: "Ordinal number"
+        user_name: "User name"
+        quantity: "Quantity"
+        price: "Price"
+        sum_cost: "Total cost"
+        danger: "No sales for this day"

@@ -6,6 +6,11 @@ class Order < ApplicationRecord
   scope :ordered_by_price, -> { order(:total_money) }
   scope :sort_by_created, -> { order(created_at: :asc) }
   scope :approved, ->{where(status: :approve)}
+  scope :find_date_accept, (lambda do |date|
+    where("created_at LIKE ? AND status = ?", "%#{date}%",
+          Order.statuses[:approve])
+  end)
+  scope :find_sum_day, ->{group(:status).sum(:total_money)}
   delegate :email, :name, to: :user, prefix: true
   enum status: { pending: 0, approve: 1, not_accept: 2, cancel: 3 }
   validates :name_customer, presence: true,
