@@ -1,0 +1,7 @@
+<%= search_form_for [:admin, @u], class: "form-inline" do |f| %>
+  <div class="form-group form-search">
+    <%= f.label :user_cont, t("users.form.name_email_form") %>
+    <%= f.text_field :user_cont, class: "form-control" %>
+    <%= button_tag " ", class: "btn btn-success fa-solid fa-magnifying-glass form-control" %>
+  </div>
+<% end %>

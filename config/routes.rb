@@ -36,6 +36,7 @@ Rails.application.routes.draw do
         end
       end
       resources :statistics, only: %i(index)
+      resources :users, only: %i(index update)
     end
   end
 end

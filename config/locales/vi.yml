@@ -83,6 +83,17 @@ vi:
       password: "Mật khẩu"
       password_confirmation: "Nhập lại mật khẩu"
       current_password: "Mật khẩu hiện tại"
+      name_email_form: "Tìm kiếm theo tên hoặc email hoặc sđt: "
+    unlocks:
+      lock: "Khóa"
+      unlock: "Mở khóa"
+      about: "Thông tin"
+      userid: "User Id"
+      name: "Tên"
+      email: "Địa chỉ Email"
+      phone: "Số điện thoại"
+      role: "Quyền"
+      address: "Địa Chỉ"
     new:
       new_user: "Người dùng mới? "
       profile: "Hồ sơ"
@@ -149,6 +160,7 @@ vi:
     update_order_already: "Tình trạng đã cập nhật rồi!"
     order_empty: "Danh sách đơn hàng trống, không tìm thấy đơn hàng"
     not_login: "Hãy đăng nhập trước !"
+    process_success: "Xử lý thành công"
   mailer:
     book_store: "Book Store"
     hi: "Xin Chào"

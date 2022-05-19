@@ -12,6 +12,7 @@ import "@fortawesome/fontawesome-free/css/all"
 require( "jquery" )
 import "bootstrap"
 import "chartkick/chart.js"
+require( "packs/handle_banner" )
 
 Rails.start()
 Turbolinks.start()
