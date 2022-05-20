@@ -8,7 +8,7 @@ class OrderDetail < ApplicationRecord
   delegate :name, :price, :image, to: :product, prefix: true
   validate :product_present
   validate :order_present
-
+  scope :count_id_by_order_id, ->(id) { where(order_id: id).count }
   def unit_price
     if persisted?
       self[:price]
