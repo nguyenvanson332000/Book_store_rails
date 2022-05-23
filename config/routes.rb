@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post "create_order" => "orders#create_order"
+  post "capture_order", to: "orders#capture_order"
   devise_for :users, only: :omniauth_callbacks,
                      controllers: { omniauth_callbacks: "omniauth_callbacks" }
   scope "(:locale)", locale: /en|vi/ do
@@ -10,7 +12,6 @@ Rails.application.routes.draw do
       get "login", to: "devise/sessions#new"
       delete "logout", to: "devise/sessions#destroy"
     end
-
     resources :carts, only: %i(index) do
       collection do
         post "add_to_cart/:id", to: "carts#add_to_cart", as: "add_to"
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
         delete "delete/:id", to: "carts#delete", as: "delete_from"
       end
     end
+    resources :payments
     resources :static_pages, only: %i(index show)
     resources :account_activations, only: :edit
     resources :password_resets, only: %i(new create edit update)

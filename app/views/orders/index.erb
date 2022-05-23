@@ -49,7 +49,7 @@
             <%= number_to_currency(order.total_money, precision: 0, locale: :vi) %>
           </td>
           <td class="ty-cart-content__product-elem ty-cart-content__price">
-            <%= link_to order_order_details_path(order), class: "btn btn-sm btn-primary" do %>
+            <%= link_to order_order_details_path(order), class: "btn btn-sm btn-primary btn-reload" do %>
               <i class="fa fa-eye"></i>
             <% end %>
             <% if order.status == "pending" %>
@@ -69,3 +69,4 @@
       <%= link_to t("order.continue_shopping"), home_client_path, class: "btn-product btn-warning" %>
     </div>
   </div>
+</div>

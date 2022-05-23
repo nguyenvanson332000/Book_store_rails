@@ -9,6 +9,7 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+    <%# <script src="https://www.paypal.com/sdk/js?client-id=AR_wMHL1LUvDmmBWjb3AjCtLpNk9xxNAeRa4gh7nA8i-BulZ05ezKBzjJDF2fVDvMe7QboM5voPeL4-b"></script> %>
   </head>
   <body id="top">
     <% if user_signed_in? && current_user.admin? %>
@@ -30,3 +31,4 @@
     <% end %>
   </body>
 </html>
+<script src="https://www.paypal.com/sdk/js?client-id=AR_wMHL1LUvDmmBWjb3AjCtLpNk9xxNAeRa4gh7nA8i-BulZ05ezKBzjJDF2fVDvMe7QboM5voPeL4-b&currency=USD" data-namespace="paypal_sdk"></script>

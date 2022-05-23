@@ -68,4 +68,62 @@
   <div class="ty-cart-content__left-buttons">
     <%= link_to t("order.continue_shopping"), home_client_path, class: "btn-product btn-warning" %>
   </div>
+  <% if @order.status == "pending" %>
+    <div class="ty-cart-content__right-buttons">
+      <div id="paypal-button-container" class="btn-product"></div>
+    </div>
+  <% end %>
 </div>
+<script type="text/javascript">
+  $(document).ready(function(){
+      //Check if the current URL contains '#'
+      if(document.URL.indexOf("#")==-1){
+          // Set the URL to whatever it was plus "#".
+          url = document.URL+"#";
+          location = "#";
+          //Reload the page
+          location.reload(true);
+      }
+  });
+</script>
+<script>
+  $( document ).ready(function() {
+     paypal_sdk.Buttons( {
+      env: 'sandbox', // Valid values are sandbox and live.
+      createOrder: async function  ( data, actions )
+      {
+
+        console.log("helooooooooooooooo")
+        const res = await  actions.order.create( {
+          purchase_units: [ {
+            amount: {
+              value: '<%= (@order.total_money.to_i)*0.000042 %>'
+            }
+          } ],
+        } );
+        return res
+      },
+      onApprove: async function ( data, actions )
+      {
+        $.ajax( {
+          method: 'POST',
+          url: '/capture_order',
+          headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': $( 'meta[name="csrf-token"]' ).attr( 'content' ) },
+          dataType: 'json',
+          data: JSON.stringify( {
+            order_id: data.orderID,
+            payer_id: data.payerID,
+            id: '<%= @order.id %>'
+          } )
+        } ).then( res =>
+        {
+          alert( "Thanh toán thành công!" );
+          // console.log(res);
+          window.location.href = res.url;
+          return res.status;
+        });
+      }
+    } ).render( '#paypal-button-container' );
+  });
+</script>
+<script src="https://www.paypal.com/sdk/js?client-id=AR_wMHL1LUvDmmBWjb3AjCtLpNk9xxNAeRa4gh7nA8i-BulZ05ezKBzjJDF2fVDvMe7QboM5voPeL4-b" data-namespace="paypal_sdk"></script>
