@@ -44,6 +44,11 @@ GEM
     activejob (6.1.5)
       activesupport (= 6.1.5)
       globalid (>= 0.3.6)
+    activemerchant (1.126.0)
+      activesupport (>= 4.2)
+      builder (>= 2.1.2, < 4.0.0)
+      i18n (>= 0.6.9)
+      nokogiri (~> 1.4)
     activemodel (6.1.5)
       activesupport (= 6.1.5)
     activerecord (6.1.5)
@@ -232,6 +237,11 @@ GEM
       activerecord (>= 5.1, < 7.1)
     parser (3.1.2.0)
       ast (~> 2.4.1)
+    paypal-checkout-sdk (1.0.4)
+      paypalhttp (~> 1.0.1)
+    paypal-payouts-sdk (1.0.1)
+      paypalhttp (~> 1.0.1)
+    paypalhttp (1.0.1)
     public_suffix (4.0.7)
     puma (5.6.4)
       nio4r (~> 2.0)
@@ -390,6 +400,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_storage_validations (= 0.8.2)
+  activemerchant
   acts_as_paranoid
   bcrypt
   bootsnap (>= 1.4.4)
@@ -416,6 +427,8 @@ DEPENDENCIES
   omniauth-google-oauth2
   omniauth-rails_csrf_protection
   paranoia (~> 2.2)
+  paypal-checkout-sdk
+  paypal-payouts-sdk
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)

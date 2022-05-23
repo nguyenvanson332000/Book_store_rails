@@ -36,6 +36,8 @@ gem "cancancan"
 gem "chartkick"
 gem "groupdate"
 gem "faker"
+gem "activemerchant"
+gem "paypal-checkout-sdk"
 
 group :development, :test do
   gem "rspec-rails", "~> 4.0.1"

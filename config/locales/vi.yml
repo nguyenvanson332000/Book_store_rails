@@ -222,7 +222,7 @@ vi:
     continue_shopping: "Tiếp tục mua sắm"
     pay: "Thanh toán"
     total: "Tổng cộng: "
-    proceed_order: "Tiến hành đặt hàng"
+    proceed_order: "Tiến hành đặt hàng Trực tiếp"
     order_detail: "Chi tiết đặt hàng"
     order_success: "Đặt hàng thành công"
     not_valid: "Đặt hàng không hợp lệ"

@@ -1,7 +1,11 @@
+require "paypal-checkout-sdk"
+
 class OrdersController < ApplicationController
   before_action :logged_in_user, only: %i(new create update_order_status)
   before_action :load_order, only: %i(update_order_status)
   before_action :check_status?, only: %i(update_order_status)
+  before_action :paypal_init, only: %i(create_order capture_order)
+  skip_before_action :verify_authenticity_token
 
   def index
     @search1 = current_user.orders.ransack(params[:q])
@@ -40,6 +44,45 @@ class OrdersController < ApplicationController
     end
   end
 
+  def create_order
+    request = PayPalCheckoutSdk::Orders::OrdersCaptureRequest::new(params[:order_id])
+    begin
+      response = @client.execute request
+      order = Order.new
+      order.total_money = params[:total_money]
+      order.status = "approve"
+      order.address = params[:address]
+      order.phone_number = params[:phone_number]
+      order.name_customer = params[:name_customer]
+      order.user_id = current_user.id
+      order.token = response.result.id
+      order.save!
+      order.paid = response.result.status == "COMPLETED"
+      if order.save
+        session[:cart] = nil
+        return render :json => { :status => "COMPLETED", url: orders_path }, :status => :ok
+      end
+    rescue PayPalHttp::HttpError => ioe
+      # HANDLE THE ERROR
+    end
+  end
+
+  def capture_order
+    request = PayPalCheckoutSdk::Orders::OrdersCaptureRequest::new(params[:order_id])
+    begin
+      response = @client.execute request
+      # order = Order.find_by :token => params[:order_id]
+      order = Order.find_by :id => params[:id]
+      order.update!(status: "approve")
+      order.paid = response.result.status == "COMPLETED"
+      if order.save
+        return render :json => { :status => "COMPLETED", url: orders_path }, :status => :ok
+      end
+    rescue PayPalHttp::HttpError => ioe
+      # HANDLE THE ERROR
+    end
+  end
+
   private
 
   def order_params
@@ -47,15 +90,22 @@ class OrdersController < ApplicationController
                                   :total_money)
   end
 
+  def paypal_init
+    client_id = "AR_wMHL1LUvDmmBWjb3AjCtLpNk9xxNAeRa4gh7nA8i-BulZ05ezKBzjJDF2fVDvMe7QboM5voPeL4-b"
+    client_secret = "EOCCsLMEEzrDoIctvjmApN-BeIfikdgw2OSOClayd5ekFx_o7SoiXXp-HBpOaLDzReEHCY877WJstv9b"
+    environment = PayPal::SandboxEnvironment.new client_id, client_secret
+    @client = PayPal::PayPalHttpClient.new environment
+  end
+
   def create_order_details
     @cart_items.each do |item|
       check_enough_quantity(item)
-      line_item = {product_id: item[:product].id, quantity: item[:quantity]}
+      line_item = { product_id: item[:product].id, quantity: item[:quantity] }
       @order.order_details.build(line_item)
     end
   end
 
-  def check_enough_quantity item
+  def check_enough_quantity(item)
     return if item[:product].quantity >= item[:quantity]
 
     flash.now[:warning] = t("product.please_update_quantity",

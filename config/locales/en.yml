@@ -222,7 +222,7 @@ en:
     continue_shopping: "Continue shopping"
     pay: "Pay"
     total: "Total: "
-    proceed_order: "Proceed to order"
+    proceed_order: "Proceed to order Directly"
     order_detail: "Order details"
     order_success: "Order Success"
     not_valid: "Order not valid"
