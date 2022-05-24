@@ -27,8 +27,8 @@
     <tbody>
       <% @order_detais.each do |item| %>
         <tr class="vs-cart-product">
-          <td class="ty-cart-content__product-elem ty-cart-content__image-block">
-            <%= image_tag item.product.image if item.product.image.attached? %>
+          <td class="ty-cart-content__product-elem ty-cart-content__image-block center">
+            <%= image_tag item.product.display_image if item.product.image.attached? %>
           </td>
           <td class="ty-cart-content__product-elem ty-cart-content__description">
             <%= link_to item.product.name, static_page_path(item.product.id), class: "product-title-tb" %>
