@@ -263,6 +263,11 @@ en:
     quantity: "Quality: "
     price: "Price: "
     total_price: "Total Price: "
+    content_new_order: "BookStore is pleased to inform you that your order has been received and is in the process of being processed. Please see order details below for confirmation."
+    hi: "Hi %{name}"
+    name_receiver: "Name receiver: %{name_receiver}"
+    phone_number: "Phone number: %{phone_number}"
+    address: "Address: %{address}"
   order_mailer:
     title: "Update Status Order"
   button:

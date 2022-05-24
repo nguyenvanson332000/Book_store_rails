@@ -17,7 +17,7 @@ class CartsController < ApplicationController
       flash[:success] = t "cart.add_success"
     end
     session[:cart] = current_cart
-    redirect_to root_path
+    redirect_to carts_path
   end
 
   def update
@@ -52,7 +52,7 @@ class CartsController < ApplicationController
       end
     return if @product.check_enough_quantity? quantity
     flash[:danger] = t "product.out_stock"
-    redirect_to root_path
+    redirect_to carts_path
   end
 
   def get_line_item

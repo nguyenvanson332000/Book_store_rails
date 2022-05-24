@@ -77,7 +77,9 @@
   <div class="ty-cart-content__left-buttons">
     <%= link_to t("order.continue_shopping"), home_client_path, class: "btn-product btn-warning" %>
   </div>
-  <div class="ty-cart-content__right-buttons">
-    <%= link_to t("order.pay"), new_order_path, class: "btn-product btn-danger" %>
-  </div>
+  <% if @cart_items.present? %>
+    <div class="ty-cart-content__right-buttons">
+      <%= link_to t("order.pay"), new_order_path, class: "btn-product btn-danger" %>
+    </div>
+  <% end %>
 </div>
