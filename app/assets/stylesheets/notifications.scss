@@ -1,0 +1,88 @@
+// Place all the styles related to the notifications controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "color";
+
+.btn__badge {
+  color: #000;
+  font-size: 10px;
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  padding: 0px 4px;
+  border-radius: 2px;
+}
+.btn__badge--red {
+  background: $red;
+}
+.noti-li {
+  padding: 10px 0px 3px 5px;
+  margin: 5px 5px 0px 5px;
+  height: 57px;
+  width: 94%;
+  font-size: 10px;
+  text-align: left;
+  border-radius: 10px;
+  color: #000;
+  li {
+    border-right: 0px !important;
+  }
+}
+.not-read {
+  background-color: #5cb85c;
+}
+.seen {
+  background-color: $gray-dark;
+}
+.header__navbar-user-notification {
+  position: relative;
+}
+
+.header__navbar-user-notification:hover .header__navbar-user-notification-menu {
+  display: block;
+}
+
+.header__navbar-user-notification-menu {
+  position: absolute;
+  padding-left: 0;
+  top: 32px;
+  right: -12px;
+  background-color: $white-color;
+  width: 200px;
+  height: auto;
+  list-style: none;
+  border-radius: 4px;
+  z-index: 999999;
+  box-shadow: 0 1px 2px #2e2d2d;
+  text-align: left !important;
+  display: none;
+}
+
+.header__navbar-user-notification-menu::before {
+  content: "";
+  border-width: 20px 15px;
+  border-style: solid;
+  border-color: transparent transparent $white-color transparent;
+  position: absolute;
+  right: 20px;
+  top: -30px;
+}
+
+.header__navbar-user-notification-menu::after {
+  content: "";
+  border-width: 20px 27px;
+  display: block;
+  position: absolute;
+  top: -8px;
+  right: 0;
+  width: 100px;
+  height: 50px;
+}
+.header__cart-heading {
+  float: left;
+  text-align: left !important;
+  margin: 8px 0 8px 12px;
+  font-size: 1.4rem;
+  color: rgb(25, 23, 23);
+  font-weight: 400;
+}

@@ -1,0 +1,23 @@
+<% if check_read notification %>
+  <%= link_to notification_path(notification) do %>
+    <ul class="noti-li not-read">
+      <li>
+        <%= notification.title %>
+      </li>
+      <li>
+        <%= notification.created_at.strftime("%m/%d/%Y %H:%M:%S") %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <%= link_to notification_path(notification) do %>
+    <ul class="noti-li seen">
+      <li >
+        <%= notification.title %>
+      </li>
+      <li>
+        <%= notification.created_at.strftime("%m/%d/%Y %H:%M:%S") %>
+      </li>
+    </ul>
+  <% end %>
+<% end %>

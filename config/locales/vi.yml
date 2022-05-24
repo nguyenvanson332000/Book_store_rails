@@ -76,6 +76,7 @@ vi:
     resend_confirmation: "Gửi lại xác nhận"
     unlocks: "Gửi lại hướng dẫn mở khóa"
     order_statistic: "Thống Kê Số Lượng Đặt Hàng"
+    notification: "Thông Báo"
   users:
     form:
       name: "Tên"
@@ -214,6 +215,7 @@ vi:
     invalid: "Phải phù hợp với format!"
     min: "Phải nhỏ hơn 5MB!"
   order:
+    at_time: "Vào lúc: "
     product: "Sản phẩm"
     quantity: "Số lượng"
     unit_price: "Đơn giá"
@@ -299,3 +301,15 @@ vi:
         price: "Giá"
         sum_cost: "Tổng tiền"
         danger: "Không có doanh thu của ngày này"
+  notification:
+    title: "Đơn hàng đã được xử lý"
+    content: "Đơn hàng của bạn đã được xử lý ở trạng thái: "
+    link: "vui lòng kiểm tra tại"
+    not_found: "không tìm thấy thông báo"
+    notification_title: "Thông Báo ..."
+    order_not_accept: "chưa được chấp thuận! "
+    order_approve: "đã được chấp thuận!"
+    order_pending: "đang chờ xác nhận!"
+    order_cancel: "đã bị hủy"
+    show_detail: "Xem chi tiết tại "
+    here: "đây!"
