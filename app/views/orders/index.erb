@@ -9,21 +9,21 @@
 <div>
   <table class="ty-cart-content ty-table">
     <thead>
-      <tr class="vs-cart-header">
+      <tr class="vs-cart-header w-detail-order">
         <th class="ty-cart-content__title ty-left">
           <%= t "order.id" %>
         </th>
-        <th class="ty-cart-content__title ty-left">
-          <%= t "order.status" %>
-        </th>
-        <th class="ty-cart-content__title ty-right">
+        <th class="ty-cart-content__title ty-right w-create-order">
           <%= t "order.name_receiver" %>
         </th>
-        <th class="ty-cart-content__title quantity-cell">
+        <th class="ty-cart-content__title quantity-cell w-create-order">
           <%= t "order.date_crate" %>
         </th>
-        <th class="ty-cart-content__title ty-right">
+        <th class="ty-cart-content__title ty-right w-price-order">
           <%= t "order.total_money" %>
+        </th>
+        <th class="ty-cart-content__title ty-left">
+          <%= t "order.status" %>
         </th>
         <th class="ty-cart-content__title ty-right">
           <%= t "order.operation" %>
@@ -32,21 +32,21 @@
     </thead>
     <tbody>
       <% @orders.each do |order| %>
-        <tr class="vs-cart-product">
+        <tr class="vs-cart-product w-detail-order">
           <td class="ty-cart-content__product-elem ty-cart-content__image-block">
             <%= order.id %>
           </td>
-          <td class="ty-cart-content__product-elem ty-cart-content__description">
-            <%= order.status %>
-          </td>
-          <td class="ty-cart-content__product-elem ty-cart-content__description">
+          <td class="ty-cart-content__product-elem ty-cart-content__description w-create-order">
             <%= order.name_customer %>
           </td>
-          <td class="ty-cart-content__product-elem ty-cart-content__price">
-            <%= order.created_at %>
+          <td class="ty-cart-content__product-elem ty-cart-content__price w-create-order">
+            <%= order.created_at.strftime("%d/%m/%Y") %>
           </td>
-          <td class="ty-cart-content__product-elem ty-cart-content__price">
+          <td class="ty-cart-content__product-elem ty-cart-content__price w-price-order">
             <%= number_to_currency(order.total_money, precision: 0, locale: :vi) %>
+          </td>
+          <td class="ty-cart-content__product-elem ty-cart-content__description">
+            <%= order.status %>
           </td>
           <td class="ty-cart-content__product-elem ty-cart-content__price">
             <%= link_to order_order_details_path(order), class: "btn btn-sm btn-primary btn-reload" do %>

@@ -77,15 +77,6 @@ ActiveRecord::Schema.define(version: 2022_05_21_083807) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "payments", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "order_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["order_id"], name: "index_payments_on_order_id"
-    t.index ["user_id"], name: "index_payments_on_user_id"
-  end
-
   create_table "products", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.integer "quantity"
@@ -164,8 +155,6 @@ ActiveRecord::Schema.define(version: 2022_05_21_083807) do
   add_foreign_key "order_details", "orders"
   add_foreign_key "order_details", "products"
   add_foreign_key "orders", "users"
-  add_foreign_key "payments", "orders"
-  add_foreign_key "payments", "users"
   add_foreign_key "products", "categories"
   add_foreign_key "rates", "products"
   add_foreign_key "rates", "users"

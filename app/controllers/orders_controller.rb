@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
       create_order_details
       @order.assign_attributes(order_params)
       @order.save!
+      send_mail_new_order
       flash[:success] = t "order.order_success"
       session[:cart] = nil
       redirect_to root_path
@@ -48,17 +49,20 @@ class OrdersController < ApplicationController
     request = PayPalCheckoutSdk::Orders::OrdersCaptureRequest::new(params[:order_id])
     begin
       response = @client.execute request
-      order = Order.new
-      order.total_money = params[:total_money]
-      order.status = "approve"
-      order.address = params[:address]
-      order.phone_number = params[:phone_number]
-      order.name_customer = params[:name_customer]
-      order.user_id = current_user.id
-      order.token = response.result.id
-      order.save!
-      order.paid = response.result.status == "COMPLETED"
-      if order.save
+      @order = Order.new
+      @order.total_money = params[:total_money]
+      @order.status = "approve"
+      @order.address = params[:address]
+      @order.phone_number = params[:phone_number]
+      @order.name_customer = params[:name_customer]
+      @order.user_id = current_user.id
+      @order.token = response.result.id
+      @cart_items = get_line_items_in_cart
+      create_order_details
+      @order.save!
+      @order.paid = response.result.status == "COMPLETED"
+      if @order.save
+        send_mail_new_order
         session[:cart] = nil
         return render :json => { :status => "COMPLETED", url: orders_path }, :status => :ok
       end
@@ -72,10 +76,11 @@ class OrdersController < ApplicationController
     begin
       response = @client.execute request
       # order = Order.find_by :token => params[:order_id]
-      order = Order.find_by :id => params[:id]
-      order.update!(status: "approve")
-      order.paid = response.result.status == "COMPLETED"
-      if order.save
+      @order = Order.find_by :id => params[:id]
+      @order.update!(status: "approve")
+      @order.paid = response.result.status == "COMPLETED"
+      if @order.save
+        send_mail_new_order
         return render :json => { :status => "COMPLETED", url: orders_path }, :status => :ok
       end
     rescue PayPalHttp::HttpError => ioe
@@ -133,5 +138,10 @@ class OrdersController < ApplicationController
 
     flash[:danger] = t "flash.invalid_status"
     redirect_to orders_path
+  end
+
+  def send_mail_new_order
+    OrderMailer.new_orders(@order, @order.order_details.includes(:product),
+                           @order.total_money).deliver_now
   end
 end

@@ -265,6 +265,12 @@ vi:
     quantity: "Số Lượng: "
     price: "Đơn Giá: "
     total_price: "Tổng Tiền: "
+    content_new_order: "BookStore rất vui thông báo đơn hàng của quý khách đã tiếp nhận và trong quá trình xử lý.
+    Vui lòng xem chi tiết đơn hàng bên dưới để xác nhận."
+    hi: "Chào %{name}"
+    name_receiver: "Tên người nhận: %{name_receiver}"
+    phone_number: "Số điện thoại: %{phone_number}"
+    address: "Địa chỉ: %{address}"
   order_mailer:
     title: "Cập Nhật Trạng Thái Đơn Hàng"
   button:

@@ -1,0 +1,30 @@
+<h1><%= t("orders_mailer.hi", name: @order.user_name) %></h1>
+<%= t "orders_mailer.content_new_order" %><br>
+<%= t("orders_mailer.name_receiver", name_receiver: @order.name_customer) %><br>
+<%= t("orders_mailer.phone_number", phone_number: @order.phone_number) %><br>
+<%= t("orders_mailer.address", address: @order.address) %><br>
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= t "product.name" %></th>
+      <th><%= t "product.quantity" %></th>
+      <th><%= t "product.price" %></th>
+      <th><%= t "orders.total_order" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order_detail.each do |detail|%>
+      <tr>
+        <td><%= detail.product_name %></td>
+        <td><%= detail.quantity %></td>
+        <td><%= number_to_currency(detail.product_price, precision: 0) %></td>
+        <td><%= number_to_currency(detail.product_price*detail.quantity, precision: 0) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<hr>
+<h3>
+  <b><%= t "orders.total_order" %></b>:
+  <%= number_to_currency(@total, precision: 0) %>
+</h3>
