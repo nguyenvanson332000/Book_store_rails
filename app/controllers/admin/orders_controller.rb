@@ -13,6 +13,7 @@ class Admin::OrdersController < Admin::AdminController
   def approve
     ActiveRecord::Base.transaction do
       @order.approve!
+      create_notification @order
       send_mail_change_status
     end
   rescue ActiveRecord::RecordInvalid
@@ -27,6 +28,7 @@ class Admin::OrdersController < Admin::AdminController
     ActiveRecord::Base.transaction do
       update_quantity_reject @order if @order.pending? || @order.approve?
       @order.pending? ? @order.not_accept! : @order.cancel!
+      create_notification @order
       send_mail_change_status
     end
   rescue ActiveRecord::RecordInvalid
@@ -68,5 +70,22 @@ class Admin::OrdersController < Admin::AdminController
 
   def send_mail_change_status
     OrderMailer.order_status(@order, @order_detail, @total).deliver_now
+  end
+
+  def create_notification order
+    order_content=""
+    case order.status
+    when "pending"
+      order_content = t "notification.order_pending"
+    when "approve"
+      order_content = t "notification.order_approve"
+    when "not_accept"
+      order_content = t "notification.order_not_accept"
+    when "cancel"
+      order_content = t "notification.order_cancel"
+    end
+    Notification.create(recipient: order.user, actor: current_user,
+                          title: t("notification.title"),
+                          content: t("notification.content") + order_content)
   end
 end

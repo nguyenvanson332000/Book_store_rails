@@ -9,6 +9,7 @@ class Ability
     can :read, [Product]
 
     if user&.admin == false
+      can %i(index show), Notifications
       can %i(update read), User, id: user.id
       can %i(read create update order_product), Order
     end

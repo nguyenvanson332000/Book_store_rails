@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :static_pages, only: %i(index show)
     resources :account_activations, only: :edit
     resources :password_resets, only: %i(new create edit update)
+    resources :notifications
     resources :orders, only: %i(new create index) do
       resources :order_details, only: %i(index)
       member do

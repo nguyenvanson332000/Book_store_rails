@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_21_083807) do
+ActiveRecord::Schema.define(version: 2022_05_24_164302) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -48,6 +48,17 @@ ActiveRecord::Schema.define(version: 2022_05_21_083807) do
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "deleted_at"
     t.index ["deleted_at"], name: "index_categories_on_deleted_at"
+  end
+
+  create_table "notifications", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
+    t.integer "recipient_id"
+    t.integer "actor_id"
+    t.string "notice_type"
+    t.string "title"
+    t.string "content"
+    t.datetime "checked"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "order_details", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|

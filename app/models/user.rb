@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :rates, dependent: :destroy
   has_many :orders, dependent: :destroy
   has_many :suggests, dependent: :destroy
+  has_many :notifications, foreign_key: :recipient_id, dependent: :destroy
 
   before_save :downcase_email
 

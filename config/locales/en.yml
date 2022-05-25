@@ -76,6 +76,7 @@ en:
     resend_confirmation: "Resend confirmation"
     unlocks: "Resend unlock instructions"
     order_statistic: "Order quantity statistics"
+    notification: "Notification"
   users:
     form:
       name: "Name"
@@ -214,6 +215,7 @@ en:
     invalid: "Must be a valid image format!"
     min: "Should be less than 5MB!"
   order:
+    at_time: "At Time: "
     product: "Product"
     quantity: "Quantity"
     unit_price: "Unit price"
@@ -296,3 +298,15 @@ en:
         price: "Price"
         sum_cost: "Total cost"
         danger: "No sales for this day"
+  notification:
+    title: "Order has been processed"
+    content: "Your order has been processed at status:"
+    link: " please check at"
+    not_found: "not_found"
+    notification_title: "Notifications ..."
+    order_not_accept: "not approved! "
+    order_approve: "approved!"
+    order_pending: "pending!"
+    order_cancel: "cancelled!"
+    show_detail: "See details "
+    here: "here!"
