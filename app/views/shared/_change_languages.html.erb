@@ -1,12 +1,26 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <ul class="nav navbar-nav navbar-right">
-      <li>
-        <a href="#"><i class="zmdi zmdi-notifications text-danger"></i>
-        </a>
-      </li>
-      <li><%= link_to t("language.en"), locale: :en %></li>
-      <li><%= link_to t("language.vi"), locale: :vi %></li>
+      <% if user_signed_in? %>
+        <li class="header__navbar-admin-notification">
+          <%= link_to "#", class: "dropdown-toggle", "data-toggle": "dropdown" do %>
+            <i class="fas fa-bell rgtspace-5"></i>
+            <span class="btn__badge_admin">
+              <%= current_user.notifications.unchecked %>
+            </span>
+          <% end %>
+          <ul class="header__navbar-admin-notification-menu">
+            <li class="header__cart-heading">
+              <%= t"notification.notification_title"%>
+            </li>
+            <li class="pre-scrollable show-list-notification">
+              <%= render current_user.notifications.sort_by_created %>
+            </li>
+          </ul>
+        </li>
+        <li><%= link_to t("language.en"), locale: :en %></li>
+        <li><%= link_to t("language.vi"), locale: :vi %></li>
+      <% end %>
     </ul>
   </div>
 </nav>

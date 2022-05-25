@@ -16,10 +16,9 @@
           <li class="header__navbar-user-notification">
             <%= link_to "#", class: "dropdown-toggle", "data-toggle": "dropdown" do %>
               <i class="fas fa-bell rgtspace-5"></i>
-              <span class="btn__badge btn__badge--red">
+              <span class="btn__badge">
                 <%= current_user.notifications.unchecked %>
               </span>
-              <b class="caret"></b>
             <% end %>
             <ul class="header__navbar-user-notification-menu">
               <li></li>

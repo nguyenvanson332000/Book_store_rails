@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
       create_order_details
       @order.assign_attributes(order_params)
       @order.save!
+      create_notification
       send_mail_new_order
       flash[:success] = t "order.order_success"
       session[:cart] = nil
@@ -37,6 +38,7 @@ class OrdersController < ApplicationController
     ActiveRecord::Base.transaction do
       @order.update!(status: params[:status])
       @order.cancel_order_quantity if params[:status].eql?("cancel")
+      create_notification
       flash[:info] = t "flash.order_cancel"
     rescue ActiveRecord::RecordInvalid
       flash[:danger] = t "flash.order_cancel_fail"
@@ -143,5 +145,11 @@ class OrdersController < ApplicationController
   def send_mail_new_order
     OrderMailer.new_orders(@order, @order.order_details.includes(:product),
                            @order.total_money).deliver_now
+  end
+
+  def create_notification
+    Notification.create(recipient: User.first, actor: current_user,
+      title: current_user.name + t("notification.title_ad"),
+      content: t("notification.content_ad"))
   end
 end

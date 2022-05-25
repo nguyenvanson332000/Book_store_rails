@@ -4,14 +4,33 @@
 @import "color";
 
 .btn__badge {
-  color: #000;
+  color: #fff8f8;
+  font-size: 10px;
+  position: absolute;
+  top: -6px;
+  right: 8px;
+  padding: 0px 4px;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  background-color: red;
+  text-align: center;
+}
+
+.btn__badge_admin {
+  color: #2f2d2d;
   font-size: 10px;
   position: absolute;
   top: 8px;
-  right: 15px;
+  right: 10px;
   padding: 0px 4px;
-  border-radius: 2px;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  background-color: red;
+  text-align: center;
 }
+
 .btn__badge--red {
   background: $red;
 }
@@ -78,6 +97,52 @@
   width: 100px;
   height: 50px;
 }
+
+.header__navbar-admin-notification {
+  position: relative;
+}
+
+.header__navbar-admin-notification:hover .header__navbar-admin-notification-menu {
+  display: block;
+}
+
+.header__navbar-admin-notification-menu {
+  position: absolute;
+  padding-left: 0;
+  top: 43px;
+  right: 5px;
+  background-color: $white-color;
+  width: 200px;
+  height: auto;
+  list-style: none;
+  border-radius: 4px;
+  z-index: 999999;
+  box-shadow: 0 1px 2px #2e2d2d;
+  text-align: left !important;
+  display: none;
+}
+
+.header__navbar-admin-notification-menu::before {
+  content: "";
+  border-width: 20px 15px;
+  border-style: solid;
+  border-color: transparent transparent $white-color transparent;
+  position: absolute;
+  right: 20px;
+  top: -30px;
+}
+
+.header__navbar-admin-notification-menu::after {
+  content: "";
+  border-width: 20px 27px;
+  display: block;
+  position: absolute;
+  top: -8px;
+  right: 0;
+  width: 100px;
+  height: 50px;
+}
+
 .header__cart-heading {
   float: left;
   text-align: left !important;
@@ -85,4 +150,7 @@
   font-size: 1.4rem;
   color: rgb(25, 23, 23);
   font-weight: 400;
+}
+.show-list-notification {
+  clear: both;
 }
