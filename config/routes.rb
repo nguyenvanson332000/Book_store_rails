@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   post "create_order" => "orders#create_order"
   post "capture_order", to: "orders#capture_order"
-  devise_for :users, only: :omniauth_callbacks,
-                     controllers: { omniauth_callbacks: "omniauth_callbacks" }
+  devise_for :users, only: %i(omniauth_callbacks registrations),
+                     controllers: { omniauth_callbacks: "omniauth_callbacks", registrations: "registrations" }
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
     get "home", to: "static_pages#home", as: :home_client
     devise_for :users, skip: :omniauth_callbacks
+    # devise_for :users, controllers: { registrations: "registrations" }
     as :user do
       get "signup", to: "devise/registrations#new"
       get "login", to: "devise/sessions#new"
