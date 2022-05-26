@@ -12,20 +12,8 @@
         <h3>
           <%= @notification.content %>
         </h3>
-        <h3><%= t("notification.show_detail")%> <%=link_to t("notification.here"), admin_orders_path%></h3>
+        <h3><%= t("notification.show_detail")%> <%=link_to t("notification.here"), orders_path%></h3>
       </div>
     </div>
-  </div>
-<%else%>
-  <div class="col-lg-9">
-    <h1><%= @notification.title %></h1>
-    <h3>
-      <%= t "order.at_time" %>
-      <%= @notification.created_at.strftime("%m/%d/%Y %H:%M:%S") %>
-    </h3>
-    <h3>
-      <%= @notification.content %>
-    </h3>
-    <h3><%= t("notification.show_detail")%> <%=link_to t("notification.here"), orders_path%></h3>
   </div>
 <%end%>

@@ -310,3 +310,5 @@ en:
     order_cancel: "cancelled!"
     show_detail: "See details "
     here: "here!"
+    title_ad: " ordering book"
+    content_ad: "Please go to order manage to approve"
