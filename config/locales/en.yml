@@ -312,3 +312,7 @@ en:
     here: "here!"
     title_ad: " ordering book"
     content_ad: "Please go to order manage to approve"
+    notify: "Statistical number of unprocessed book purchase orders"
+    content_notify: "The number of orders to be processed is:"
+    revenue: "Today's revenue"
+    content_revenue: "Total revenue for today is:"

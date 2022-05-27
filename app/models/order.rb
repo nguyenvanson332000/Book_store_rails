@@ -10,7 +10,12 @@ class Order < ApplicationRecord
     where("created_at LIKE ? AND status = ?", "%#{date}%",
           Order.statuses[:approve])
   end)
+  scope :is_pending, -> { where(status: :pending).count }
   scope :find_sum_day, ->{group(:status).sum(:total_money)}
+  scope :find_sum_day_status_approve_a_day, (lambda do |date|
+    where("created_at LIKE ? AND status = ?", "%#{date}%",
+          Order.statuses[:approve]).sum(:total_money)
+  end)
   delegate :email, :name, to: :user, prefix: true
   enum status: { pending: 0, approve: 1, not_accept: 2, cancel: 3 }
   validates :name_customer, presence: true,

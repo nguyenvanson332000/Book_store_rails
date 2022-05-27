@@ -315,3 +315,7 @@ vi:
     here: "đây!"
     title_ad: "đặt hàng sách"
     content_ad: "Vui lòng chuyển đến quản lý đơn hàng để phê duyệt"
+    notify: "Thống kê số lượng đơn mua sách chưa được xử lý"
+    content_notify: "Số lượng đơn hàng cần được giải quyết là: "
+    revenue: "Doanh thu trong ngày hôm nay"
+    content_revenue: "Tổng doanh thu trong ngày hôm nay là: "

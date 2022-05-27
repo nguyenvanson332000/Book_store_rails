@@ -28,25 +28,27 @@
             <%= f.label t "users.form.address" %><br />
             <%= f.text_field :address, autofocus: true, class: "form-control" %>
           </div>
-          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-            <div class= "form-control"><%= "#{t("users.edit.waiting_confirmation")} #{resource.unconfirmed_email}" %></div>
-          <% end %>
-          <div class="field">
-            <%= f.label t"users.form.password" %><br/>
-            <i> <%= t "users.edit.note_password" %></i><br/>
-            <% if @minimum_password_length %>
-              <%= f.password_field :password, autocomplete: "new-password", placeholder: "#{@minimum_password_length} #{t("users.edit.note_password3")}" , class: "form-control" %>
+          <%unless current_user.provider.present? %>
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div class= "form-control"><%= "#{t("users.edit.waiting_confirmation")} #{resource.unconfirmed_email}" %></div>
             <% end %>
-          </div>
-          <div class="field">
-            <%= f.label t "users.form.password_confirmation" %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
-          </div>
-          <div class="field">
-            <%= f.label t "users.form.current_password" %><br/>
-            <i><%= t "users.edit.note_password2" %></i><br />
-            <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
-          </div>
+            <div class="field">
+              <%= f.label t"users.form.password" %><br/>
+              <i> <%= t "users.edit.note_password" %></i><br/>
+              <% if @minimum_password_length %>
+                <%= f.password_field :password, autocomplete: "new-password", placeholder: "#{@minimum_password_length} #{t("users.edit.note_password3")}" , class: "form-control" %>
+              <% end %>
+            </div>
+            <div class="field">
+              <%= f.label t "users.form.password_confirmation" %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+            </div>
+            <div class="field">
+              <%= f.label t "users.form.current_password" %><br/>
+              <i><%= t "users.edit.note_password2" %></i><br />
+              <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
+            </div>
+          <% end %>
           <div class="actions">
             <%= f.submit t("users.edit.btn_save"), class: "btn btn-primary button_custom" %>
           </div>
