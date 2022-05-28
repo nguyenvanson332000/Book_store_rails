@@ -52,16 +52,23 @@
             <%= link_to order_order_details_path(order), class: "btn btn-sm btn-primary btn-reload" do %>
               <i class="fa fa-eye"></i>
             <% end %>
-            <% if order.status == "pending" %>
-              <%= link_to update_order_status_order_path(order, status: :cancel),method: :put, class: "btn btn-sm btn-danger" do %>
-                <i class="fa fa-trash" aria-hidden="true"></i>
-              <% end %>
+            <% if order.pending? %>
+              <%= link_to  update_order_status_order_path(order, status: :cancel), data: { confirm: t("cart.confirm"), method: :put, remote: true}, class: "btn btn-sm btn-danger" do%>
+                <i class="fa-solid fa-ban"></i>
+              <%end%>
+            <% elsif order.cancel? %>
+              <%= link_to  update_order_status_order_path(order, status: :pending), data: { confirm: t("cart.confirm"), method: :put, remote: true}, class: "btn btn-sm btn-info" do%>
+                <i class="fa-solid fa-arrow-rotate-left"></i>
+              <%end%>
             <% end %>
           </td>
         </tr>
       <% end %>
     </tbody>
   </table>
+</div>
+<div class="paginate-customer">
+  <%= paginate @orders, theme: "twitter-bootstrap-3" %>
 </div>
 <div>
   <div class="buttons-container ty-cart-content__bottom-buttons clearfix">

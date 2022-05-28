@@ -165,7 +165,7 @@ en:
     destroy_product_fail: "Hidden product fail!"
     reject_access: "You don't have permisson to access!"
     confirm: "Are you sure to do this ?"
-    update_order_succ: "Update staus order successful!"
+    update_order_succ: "Update status order successful!"
     update_order_fail: "Update status order fail!"
     update_order_already: "Order's status update alreay!"
     order_empty: "List order is empty, not found"
@@ -202,6 +202,7 @@ en:
     sl_sp: "%{slg} product"
     solg: "Quantity: "
     short_description: "Short description: "
+    cart: "My Cart"
   number:
     currency:
       format:
