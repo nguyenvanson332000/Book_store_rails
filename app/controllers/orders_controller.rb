@@ -38,10 +38,11 @@ class OrdersController < ApplicationController
     ActiveRecord::Base.transaction do
       @order.update!(status: params[:status])
       @order.cancel_order_quantity if params[:status].eql?("cancel")
+      @order.recovery_quantity if params[:status].eql?("pending")
       create_notification
-      flash[:info] = t "flash.order_cancel"
+      flash[:info] = t "flash.update_order_succ"
     rescue ActiveRecord::RecordInvalid
-      flash[:danger] = t "flash.order_cancel_fail"
+      flash[:danger] = t "flash.update_order_fail"
     ensure
       redirect_to orders_path
     end

@@ -79,34 +79,38 @@
   </header>
   <nav id="mainav" class="hoc clear">
     <ul class="clear">
-      <li><%= link_to "Home", root_url %></li>
-      <li><a class="drop" href="#">Pages</a>
+      <li><%= link_to t("header.home"), root_url, class: "drop-cart toolbar-func left_menu" %></li>
+      <li><a class="drop-cart toolbar-func" href="#"><%= t "home.publisher" %></a>
         <ul>
-          <li><a href="pages/gallery.html">Gallery</a></li>
-          <li><a href="pages/full-width.html">Full Width</a></li>
-          <li><a href="pages/sidebar-left.html">Sidebar Left</a></li>
-          <li><a href="pages/sidebar-right.html">Sidebar Right</a></li>
-          <li><a href="pages/basic-grid.html">Basic Grid</a></li>
-          <li><a href="pages/font-icons.html">Font Icons</a></li>
+          <% @publishers.each do |publisher| %>
+            <li>
+              <%= link_to publisher.publisher, filter_by_publisher_static_page_path(publisher.publisher), method: :get %>
+            </li>
+          <% end %>
         </ul>
       </li>
-      <li><a class="drop" href="#">Dropdown</a>
+      <li>
+        <a class="drop toolbar-func" href="#"><%= t "home.category" %></a>
         <ul>
-          <li><a href="#">Level 2</a></li>
-          <li><a class="drop" href="#">Level 2 + Drop</a>
-            <ul>
-              <li><a href="#">Level 3</a></li>
-              <li><a href="#">Level 3</a></li>
-              <li><a href="#">Level 3</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Level 2</a></li>
+          <% @categories.each do |category| %>
+            <li>
+              <%= link_to category.title, filter_by_category_static_page_path(category.id), method: :get %>
+            </li>
+          <% end %>
         </ul>
       </li>
-      <li><a href="#">Link Text</a></li>
-      <li><a href="#">Link Text</a></li>
-      <li><a href="#">Link Text</a></li>
-      <li><a href="#">Long Link Text</a></li>
+      <li>
+        <a class="drop toolbar-func" href="#"><%= t "home.author" %></a>
+        <ul>
+          <% @authors.each do |author| %>
+            <li>
+              <%= link_to author.author, filter_by_author_static_page_path(author.author), method: :get %>
+            </li>
+          <% end %>
+        </ul>
+      </li>
+      <li><%= link_to t("home.cart"), carts_path, class: "drop-car toolbar-func"%></li>
+      <li><a href="#" class="drop-car toolbar-func">Hỗ Trợ</a></li>
     </ul>
   </nav>
 </div>

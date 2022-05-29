@@ -21,7 +21,13 @@ Rails.application.routes.draw do
       end
     end
     resources :payments
-    resources :static_pages, only: %i(index show)
+    resources :static_pages, only: %i(index show) do
+      member do
+        get :filter_by_category
+        get :filter_by_publisher
+        get :filter_by_author
+      end
+    end
     resources :account_activations, only: :edit
     resources :password_resets, only: %i(new create edit update)
     resources :notifications

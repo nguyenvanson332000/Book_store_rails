@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   USER_ATTRIBUTES = %w(name email id_card phone_number address password
-                  current_password).freeze
-  before_action :set_locale, :set_search
+                       current_password).freeze
+  before_action :set_locale, :set_search, :load_resources
   protect_from_forgery with: :exception
   include SessionsHelper
   include CartsHelper
@@ -42,11 +42,21 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
+  def load_resources
+    @categories = Category.includes(:products).order(:title)
+    @publishers = Product.select(:publisher).distinct
+    @authors = Product.select(:author).distinct
+    return if @categories && @publishers && @authors
+
+    flash[:danger] = t "flash.product_not_found"
+    redirect_to root_path
+  end
+
   def set_search
     @search = Product.ransack(params[:q])
   end
 
-   def check_search_book
+  def check_search_book
     return unless params[:q]
 
     if @search.result.present?

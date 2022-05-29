@@ -1,0 +1,6 @@
+<li class="list-group-item list-group-item-success">
+  <%= link_to publisher.publisher, filter_by_publisher_static_page_path(publisher.publisher), method: :get %>
+  <span class="label label-success pull-right">
+    <%= Product.total_publisher(publisher.publisher) %>
+  </span>
+</li>

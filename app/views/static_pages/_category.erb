@@ -1,0 +1,6 @@
+<li class="list-group-item list-group-item-info">
+  <%= link_to category.title, filter_by_category_static_page_path(category.id), method: :get %>
+  <span class="label label-primary pull-right">
+    <%= Product.total_categori(category.id) %>
+  </span>
+</li>
