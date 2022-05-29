@@ -7,7 +7,7 @@ class Order < ApplicationRecord
   scope :sort_by_created, -> { order(created_at: :asc) }
   scope :approved, -> { where(status: :approve) }
   scope :find_date_accept, (lambda do |date|
-          where("created_at LIKE ? AND status = ?", "%#{date}%",
+          where("updated_at LIKE ? AND status = ?", "%#{date}%",
                 Order.statuses[:approve])
         end)
   scope :is_pending, -> { where(status: :pending).count }
