@@ -28,11 +28,15 @@ class Product < ApplicationRecord
   scope :search_author, ->(author) { where(author: author) }
 
   def display_image
-    image.variant resize_to_limit: [100, 100]
+    image.variant resize_to_limit: [120, 120]
   end
 
   def display_image_client
     image.variant resize_to_limit: [150, 150]
+  end
+
+  def display_image_client_update
+    image.variant resize_to_limit: [250, 250]
   end
 
   def display_image_client_show

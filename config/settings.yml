@@ -16,6 +16,7 @@ validate:
 size:
   size_avatar: 120
 paginate_size: 5
+paginate_size_9: 9
 banner:
   lock: "lock"
   unlock: "unlock"

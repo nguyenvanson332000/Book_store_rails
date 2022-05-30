@@ -97,10 +97,12 @@
         const res = await  actions.order.create( {
           purchase_units: [ {
             amount: {
+              // value: "50000"
               value: '<%= (@order.total_money.to_i)*0.000042 %>'
             }
           } ],
         } );
+        // console.log(res);
         return res
       },
       onApprove: async function ( data, actions )

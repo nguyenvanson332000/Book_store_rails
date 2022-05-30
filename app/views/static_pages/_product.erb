@@ -1,7 +1,7 @@
 <% @products.each do |products| %>
   <div class="col-md-4 text-center col-sm-6 col-xs-6">
     <div class="thumbnail product-box">
-      <%= link_to image_tag(products.display_image, :class => "product-image"), static_page_path(products.id) %>
+      <%= link_to image_tag(products.display_image_client_update, :class => "product-image"), static_page_path(products.id) %>
       <div class="caption">
         <%= link_to products.name, static_page_path(products.id), class: "product-title" %>
         <p>

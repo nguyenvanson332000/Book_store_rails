@@ -81,7 +81,7 @@
     <ul class="clear">
       <li><%= link_to t("header.home"), root_url, class: "drop-cart toolbar-func left_menu" %></li>
       <li><a class="drop-cart toolbar-func" href="#"><%= t "home.publisher" %></a>
-        <ul>
+        <ul class="list-scroll">
           <% @publishers.each do |publisher| %>
             <li>
               <%= link_to publisher.publisher, filter_by_publisher_static_page_path(publisher.publisher), method: :get %>
@@ -90,8 +90,8 @@
         </ul>
       </li>
       <li>
-        <a class="drop toolbar-func" href="#"><%= t "home.category" %></a>
-        <ul>
+        <a class="drop-cart toolbar-func" href="#"><%= t "home.category" %></a>
+        <ul class="list-scroll">
           <% @categories.each do |category| %>
             <li>
               <%= link_to category.title, filter_by_category_static_page_path(category.id), method: :get %>
@@ -100,8 +100,8 @@
         </ul>
       </li>
       <li>
-        <a class="drop toolbar-func" href="#"><%= t "home.author" %></a>
-        <ul>
+        <a class="drop-cart toolbar-func" href="#"><%= t "home.author" %></a>
+        <ul class="list-scroll">
           <% @authors.each do |author| %>
             <li>
               <%= link_to author.author, filter_by_author_static_page_path(author.author), method: :get %>

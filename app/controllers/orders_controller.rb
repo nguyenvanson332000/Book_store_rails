@@ -25,7 +25,6 @@ class OrdersController < ApplicationController
       @order.assign_attributes(order_params)
       @order.save!
       create_notification
-      send_mail_new_order
       flash[:success] = t "order.order_success"
       session[:cart] = nil
       redirect_to root_path
@@ -65,7 +64,7 @@ class OrdersController < ApplicationController
       @order.save!
       @order.paid = response.result.status == "COMPLETED"
       if @order.save
-        send_mail_new_order
+        create_notification
         session[:cart] = nil
         return render :json => { :status => "COMPLETED", url: orders_path }, :status => :ok
       end
@@ -83,7 +82,7 @@ class OrdersController < ApplicationController
       @order.update!(status: "approve")
       @order.paid = response.result.status == "COMPLETED"
       if @order.save
-        send_mail_new_order
+        create_notification
         return render :json => { :status => "COMPLETED", url: orders_path }, :status => :ok
       end
     rescue PayPalHttp::HttpError => ioe
