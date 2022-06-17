@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  require "sidekiq/web"
+  mount Sidekiq::Web => "/sidekiq"
   post "create_order" => "orders#create_order"
   post "capture_order", to: "orders#capture_order"
   devise_for :users, only: %i(omniauth_callbacks registrations),

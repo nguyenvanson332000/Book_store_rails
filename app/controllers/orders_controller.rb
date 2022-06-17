@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
       create_order_details
       @order.assign_attributes(order_params)
       @order.save!
+      send_mail_new_order
       create_notification
       flash[:success] = t "order.order_success"
       session[:cart] = nil
@@ -38,6 +39,7 @@ class OrdersController < ApplicationController
       @order.update!(status: params[:status])
       @order.cancel_order_quantity if params[:status].eql?("cancel")
       @order.recovery_quantity if params[:status].eql?("pending")
+      send_mail_new_order
       create_notification
       flash[:info] = t "flash.update_order_succ"
     rescue ActiveRecord::RecordInvalid
@@ -82,6 +84,7 @@ class OrdersController < ApplicationController
       @order.update!(status: "approve")
       @order.paid = response.result.status == "COMPLETED"
       if @order.save
+        send_mail_new_order
         create_notification
         return render :json => { :status => "COMPLETED", url: orders_path }, :status => :ok
       end
@@ -142,14 +145,13 @@ class OrdersController < ApplicationController
     redirect_to orders_path
   end
 
-  def send_mail_new_order
-    OrderMailer.new_orders(@order, @order.order_details.includes(:product),
-                           @order.total_money).deliver_now
-  end
-
   def create_notification
     Notification.create(recipient: User.first, actor: current_user,
       title: current_user.name + t("notification.title_ad"),
       content: t("notification.content_ad"))
+  end
+
+  def send_mail_new_order
+    SendEmailJob.set(wait: 1.minute).perform_later @order
   end
 end
