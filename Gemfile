@@ -39,6 +39,7 @@ gem "faker"
 gem "activemerchant"
 gem "paypal-checkout-sdk"
 gem 'whenever', require: false
+gem "sidekiq"
 
 group :development, :test do
   gem "rspec-rails", "~> 4.0.1"
