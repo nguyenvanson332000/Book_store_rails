@@ -66,6 +66,7 @@ class OrdersController < ApplicationController
       @order.save!
       @order.paid = response.result.status == "COMPLETED"
       if @order.save
+        send_mail_new_order
         create_notification
         session[:cart] = nil
         return render :json => { :status => "COMPLETED", url: orders_path }, :status => :ok
@@ -146,9 +147,7 @@ class OrdersController < ApplicationController
   end
 
   def create_notification
-    Notification.create(recipient: User.first, actor: current_user,
-      title: current_user.name + t("notification.title_ad"),
-      content: t("notification.content_ad"))
+    SendNotificationJob.set(wait: 1.minute).perform_later(current_user,current_user.name)
   end
 
   def send_mail_new_order
