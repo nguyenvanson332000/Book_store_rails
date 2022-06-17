@@ -1,19 +1,11 @@
 <div class="row">
   <div class="col-md-3">
     <div>
-      <a href="#" class="list-group-item active">
+      <a href="#" class="list-group-item active list-group-item-success">
         <%= t "home.category" %>
       </a>
       <ul class="list-group">
         <%= render partial: "category", collection: @categories %>
-      </ul>
-    </div>
-    <div>
-      <a href="#" class="list-group-item active list-group-item-success">
-        <%= t "home.publisher" %>
-      </a>
-      <ul class="list-group">
-        <%= render partial: "publisher", collection: @publishers %>
       </ul>
     </div>
     <div>
