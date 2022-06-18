@@ -69,7 +69,7 @@ class Admin::OrdersController < Admin::AdminController
   end
 
   def send_mail_change_status
-    OrderMailer.order_status(@order, @order_detail, @total).deliver_now
+    SendEmailAdminJob.set(wait: 1.minute).perform_later @order
   end
 
   def create_notification order
