@@ -17,7 +17,7 @@ class CartsController < ApplicationController
       flash[:success] = t "cart.add_success"
     end
     session[:cart] = current_cart
-    redirect_to carts_path
+    redirect_to session[:return_to] ||= request.referer
   end
 
   def update

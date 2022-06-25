@@ -203,6 +203,8 @@ en:
     solg: "Quantity: "
     short_description: "Short description: "
     cart: "My Cart"
+    option: "Shopping trends"
+    recommendations: "Recommendations"
   number:
     currency:
       format:
@@ -225,7 +227,7 @@ en:
     continue_shopping: "Continue shopping"
     pay: "Pay"
     total: "Total: "
-    proceed_order: "Proceed to order Directly"
+    proceed_order: "Payment in cash"
     order_detail: "Order details"
     order_success: "Order Success"
     not_valid: "Order not valid"

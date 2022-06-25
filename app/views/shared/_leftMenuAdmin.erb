@@ -6,9 +6,9 @@
     </header>
     <ul class="nav">
       <li>
-        <a href="#">
+        <%= link_to admin_statistics_path do %>
           <i class="zmdi zmdi-view-dashboard"></i> <%= t"left_menu.dashboard" %>
-        </a>
+        <% end %>
       </li>
       <li>
         <%= link_to admin_products_path do %>

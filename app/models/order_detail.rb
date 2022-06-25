@@ -9,6 +9,7 @@ class OrderDetail < ApplicationRecord
   validate :product_present
   validate :order_present
   scope :count_id_by_order_id, ->(id) { where(order_id: id).count }
+  scope :total_sales_of_each_type_of_book, -> { joins(:product).group(:product_id).sum(:quantity) }
   def unit_price
     if persisted?
       self[:price]

@@ -1,4 +1,6 @@
 require "paypal-checkout-sdk"
+require "uri"
+require "net/http"
 
 class OrdersController < ApplicationController
   before_action :logged_in_user, only: %i(new create update_order_status)
@@ -24,6 +26,7 @@ class OrdersController < ApplicationController
       create_order_details
       @order.assign_attributes(order_params)
       @order.save!
+      send_data_order_to_recommend(@order)
       send_mail_new_order
       create_notification
       flash[:success] = t "order.order_success"
@@ -41,6 +44,7 @@ class OrdersController < ApplicationController
       @order.recovery_quantity if params[:status].eql?("pending")
       send_mail_new_order
       create_notification
+      send_data_order_to_recommend(@order)
       flash[:info] = t "flash.update_order_succ"
     rescue ActiveRecord::RecordInvalid
       flash[:danger] = t "flash.update_order_fail"
@@ -68,6 +72,7 @@ class OrdersController < ApplicationController
       if @order.save
         send_mail_new_order
         create_notification
+        send_data_order_to_recommend(@order)
         session[:cart] = nil
         return render :json => { :status => "COMPLETED", url: orders_path }, :status => :ok
       end
@@ -87,6 +92,7 @@ class OrdersController < ApplicationController
       if @order.save
         send_mail_new_order
         create_notification
+        send_data_order_to_recommend(@order)
         return render :json => { :status => "COMPLETED", url: orders_path }, :status => :ok
       end
     rescue PayPalHttp::HttpError => ioe
@@ -147,10 +153,14 @@ class OrdersController < ApplicationController
   end
 
   def create_notification
-    SendNotificationJob.set(wait: 1.minute).perform_later(current_user,current_user.name)
+    SendNotificationJob.set(wait: 1.minute).perform_later(current_user, current_user.name)
   end
 
   def send_mail_new_order
     SendEmailJob.set(wait: 1.minute).perform_later @order
+  end
+
+  def send_data_order_to_recommend(orders)
+    SendDataToRecomemdationJob.set(wait: 1.minute).perform_later(orders, current_user)
   end
 end

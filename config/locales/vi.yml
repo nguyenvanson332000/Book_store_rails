@@ -203,6 +203,8 @@ vi:
     solg: "Số lượng: "
     short_description: "Mô tả ngắn: "
     cart: "Giỏ Hàng Của Tôi"
+    option: "Xu hướng mua sắm"
+    recommendations: "Dành cho bạn"
   number:
     currency:
       format:
@@ -225,7 +227,7 @@ vi:
     continue_shopping: "Tiếp tục mua sắm"
     pay: "Thanh toán"
     total: "Tổng cộng: "
-    proceed_order: "Tiến hành đặt hàng Trực tiếp"
+    proceed_order: "Thanh Toán bằng tiền mặt"
     order_detail: "Chi tiết đặt hàng"
     order_success: "Đặt hàng thành công"
     not_valid: "Đặt hàng không hợp lệ"

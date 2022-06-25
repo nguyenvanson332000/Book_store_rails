@@ -29,6 +29,9 @@ Rails.application.routes.draw do
         get :filter_by_publisher
         get :filter_by_author
       end
+      collection do
+        get :show_product_ai
+      end
     end
     resources :account_activations, only: :edit
     resources :password_resets, only: %i(new create edit update)

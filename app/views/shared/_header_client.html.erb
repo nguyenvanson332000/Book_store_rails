@@ -110,7 +110,11 @@
         </ul>
       </li>
       <li><%= link_to t("home.cart"), carts_path, class: "drop-car toolbar-func"%></li>
-      <li><a href="#" class="drop-car toolbar-func">Hỗ Trợ</a></li>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to t("home.recommendations"), show_product_ai_static_pages_path, class:"drop-car toolbar-func" %>
+        </li>
+      <% end %>
     </ul>
   </nav>
 </div>

@@ -26,6 +26,8 @@ class Product < ApplicationRecord
   scope :search_publisher, ->(publisher) { where(publisher: publisher) }
   scope :total_publisher, ->(publisher) { where(publisher: publisher).size }
   scope :search_author, ->(author) { where(author: author) }
+  # scope :total_quantity_by_order_detail, ->(id) { where(id: id).sum(:quantity) }
+  scope :total_sales_of_all_books, -> { joins(:order_details).sum(:quantity) }
 
   def display_image
     image.variant resize_to_limit: [120, 120]
