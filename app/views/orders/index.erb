@@ -31,10 +31,10 @@
       </tr>
     </thead>
     <tbody>
-      <% @orders.each do |order| %>
+      <% @orders.each_with_index do |order, index| %>
         <tr class="vs-cart-product w-detail-order">
           <td class="ty-cart-content__product-elem ty-cart-content__image-block">
-            <%= order.id %>
+            <%= index +1%>
           </td>
           <td class="ty-cart-content__product-elem ty-cart-content__description w-create-order">
             <%= order.name_customer %>
