@@ -1,9 +1,11 @@
 require "net/https"
+
 class StaticPagesController < ApplicationController
   before_action :load_production, only: %i(show)
   before_action :check_search_book, :load_product_status, only: :home
   before_action :load_categories, :load_publishers, :load_authors,
                 only: %i(home filter_by_category filter_by_publisher filter_by_author)
+  before_action :load_url_api, only: :show_product_ai
 
   def home
     @products = @search.result(distinct: true).sort_by_created.page(params[:page]).per(Settings.paginate_size_9)
@@ -13,14 +15,9 @@ class StaticPagesController < ApplicationController
   end
 
   def show_product_ai
-    uri = URI('https://book-recomm.herokuapp.com/recommendations?user_id=' + current_user.id.to_s)
-    req = Net::HTTP.get(uri)
-
-    data = JSON.parse(req)
-    @product_url = data["data"]
     if @product_url.present?
-        @products = Product.ransack(id_in: @product_url["recommendations"]).result(distinct: true).sort_by_created.page(params[:page]).per(Settings.paginate_size_9)
-        render "static_pages/home"
+      @products = Product.ransack(id_in: @product_url["recommendations"]).result(distinct: true).sort_by_created.page(params[:page]).per(Settings.paginate_size_9)
+      render "static_pages/home"
     else
       sql = %{
               SELECT
@@ -55,7 +52,7 @@ class StaticPagesController < ApplicationController
 
   def filter_by_author
     @products = @search.result(distinct: true).search_author(params[:id]).sort_by_created
-                        .page(params[:page]).per(Settings.paginate_size_9)
+      .page(params[:page]).per(Settings.paginate_size_9)
     render "static_pages/home"
   end
 
@@ -101,5 +98,12 @@ class StaticPagesController < ApplicationController
 
     flash[:danger] = t "flash.product_not_found"
     redirect_to root_path
+  end
+
+  def load_url_api
+    uri = URI("https://book-recomm.herokuapp.com/recommendations?user_id=" + current_user.id.to_s)
+    req = Net::HTTP.get(uri)
+    data = JSON.parse(req)
+    @product_url = data["data"]
   end
 end

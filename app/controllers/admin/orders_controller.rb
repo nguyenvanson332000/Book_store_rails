@@ -21,7 +21,7 @@ class Admin::OrdersController < Admin::AdminController
   else
     flash[:success] = t "flash.update_order_succ"
   ensure
-    redirect_to admin_orders_path
+    redirect_to session[:return_to] ||= request.referer
   end
 
   def reject
@@ -36,7 +36,7 @@ class Admin::OrdersController < Admin::AdminController
   else
     flash[:success] = t "flash.update_order_succ"
   ensure
-    redirect_to admin_orders_path
+    redirect_to session[:return_to] ||= request.referer
   end
 
   private

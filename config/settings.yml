@@ -17,6 +17,7 @@ size:
   size_avatar: 120
 paginate_size: 5
 paginate_size_9: 6
+per_page: 10
 banner:
   lock: "lock"
   unlock: "unlock"
