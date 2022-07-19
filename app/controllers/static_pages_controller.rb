@@ -19,7 +19,8 @@ class StaticPagesController < ApplicationController
     req = Net::HTTP.get(uri)
     data = JSON.parse(req)
     @product_url = data["data"]
-    if @product_url["recommendations"].present?
+    @product_url_id = @product_url["recommendations"]
+    if @product_url_id.present?
       @products = Product.ransack(id_in: @product_url["recommendations"]).result(distinct: true).sort_by_created.page(params[:page]).per(Settings.paginate_size_9)
       render "static_pages/home"
     else

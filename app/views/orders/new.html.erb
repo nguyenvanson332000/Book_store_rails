@@ -29,7 +29,7 @@
         <% @cart_items.each do |item| %>
           <li class="clearfix" id="clearfix-item">
             <div class="thumbnail col-md-3 image_order">
-              <%= image_tag item[:product].image if item[:product].image.attached? %>
+              <%= image_tag item[:product].display_image_client if item[:product].image.attached? %>
             </div>
             <div class="caption col-md-9">
               <%= link_to item[:product].name, static_page_path(item[:product].id), class: "product-title", id: "product-title-id-name" %>

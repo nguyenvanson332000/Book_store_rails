@@ -18,6 +18,7 @@ class CartsController < ApplicationController
     end
     session[:cart] = current_cart
     redirect_to session[:return_to] ||= request.referer
+    # redirect_to carts_path
   end
 
   def update
